@@ -1,0 +1,1115 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+<meta name="theme-color" content="#050505" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="Random Radio" />
+<link rel="apple-touch-icon" href="data:image/png;base64,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" />
+<link rel="manifest" href="data:application/manifest+json;base64,eyJuYW1lIjoiUmFuZG9tIFJhZGlvIiwic2hvcnRfbmFtZSI6IlJhbmRvbSBSYWRpbyIsImRlc2NyaXB0aW9uIjoiV29ybGQgdHJpcCBieSByYWRpby4iLCJzdGFydF91cmwiOiIuIiwiZGlzcGxheSI6InN0YW5kYWxvbmUiLCJiYWNrZ3JvdW5kX2NvbG9yIjoiIzA1MDUwNSIsInRoZW1lX2NvbG9yIjoiIzA1MDUwNSIsImljb25zIjpbeyJzcmMiOiJkYXRhOmltYWdlL3BuZztiYXNlNjQsaVZCT1J3MEtHZ29BQUFBTlNVaEVVZ0FBQUxRQUFBQzBDQUlBQUFDeXI1RmxBQUFaMDBsRVFWUjQydTJkVzZ3ZDExbkh2Mi8yM3VmWUtaU3FwQ2wyYko5ajErZllpZU1tNllXZ3FxWDBpWmRFU0loS1NBaUVCRHdBTDF5bHFnOUlJSUdRa09BQkJHK29BaUZ1aGRJbXBVUkZPS1ZJMUFjb3phVnBtaVoyYm80aEZLUUtaTWZlZStiUHc3ck10OWFzbVQwemUyNTdueGxaeDNObXo1NlpNK3MzLysreXZyV0daN01aRFdiaFNwdExmOTdiZ2pwN1lEQ1hIOUc0akV2T01sM3Z5K2QxdUR5TWNMVFZ5cngrVE9SZExZS2ZZYkJFUlFNbWd6ZUJqT1ZYSHY0emgvQlhUb2NxR09QU3Y0Uk0xK2dSMndTVXVNQytETTQ5aWRhRERONHNrZUVDRXpQQ1VjbWgyRlRiVTQ2UEhwK0xhRUMzNVZDUlVZV1B2bTdEZEJoWWhENDVKTTVxMk5rWVJJZ2JEVU13eHFobGlDRnVOQUF5UmxxcXVhaThZWEJ3SzdzZUVoZWt0NXMwN2U5UDVoR0xjaTVJYWE5azdaUmpKS09odTlhRGZabDJUc2FJUlpNUzBxcCtSQ01aNnk0aHZIWndITDU4VnAvSThCckJVVll6UmxycVI3bGQ4QkYxOFllTTFxUXIrOUxzZlozMklCaUhLeVZSdEtER0tUdDBVYWNqR1YzU1VIeE1sUHpPc3BSSFUzeE1EeWNadk9JVFcvSElhUFpFWGZFeFBTUms4TXBmNFJiT2pzS2QwVGNmMHcwbWc1ditWaVBWaXhEdHpvV2dMS0drZlQ2bTdaTEJhOE5Fd1JjNXNJWHJXUVRvUFZsc3dWSVVxaFNlTnNuSGRHUElhRnoyUTJhRml6N2xaYzg2Z3F5a1gwSWhKVVdJdE1QSHRLM1c0ZlhBSWtjWXdsaHdob2JpSXlBa09NaGhCY1FzRU1rN0NIZkl4N1NoRzlvUEdhdWM1N1dYbmk4bVEwckZ5ZDM5SUJBY3ZoaDJXeDBTaHJUSlF4NkhRY1FSa2tiNHFITjdhNHl5NzUwTXJvdEMrWGpFcWoySHJBWVRuZGpkOS9aWkdzckNWUUlGRGVRK0NPOFR0RExsTEJkcVJOVDE0ZURxRy9yQ0lnakVVbFBpR1JHSkJRdHU1QmFsS3lYekhFa0FGemhiZkVTQS9OWkZtM3hVZzJNdHlDaGdRaDduNG5kL1g0aU1NQmJQSER5aG9MRWZaWEh4S01sckloQWdVQkFjT05zOVJEemJWQnFHbGZpb0FNZVM4R1RZV0ZnVXVMUmdNRXNPbUYwbW5qbjRndHJLbWVPY3lDQ0NqSDBCRkJtUWxQaUlsSmFRcWp5Z1dUaDZERnk1Q1NiS2tPR0lRZHJxS1JZT0tJNm9jTkJGdFpSNEdtQi9UZUFBSWY3Qk1rUVpkU25GQjZyclN6MDQraUtqSGhZZUVQa3VaNWdNSVJnK0ZreXNtR0JoZ0tTaVBIbndoRGlZWG5aMjlzaTFJM0JCU2JSSUJCQUpTVWlZajZyT1J4ays2c0hSUHhsVnNjaVRqU3daUWNHSVhDek1SdlZsMytMOHEwTEVYYzdzN3FldERpalAxRUtRR0oxSWZFUWd6WkRIUjBYalVwbVA1WEIwVDBialdGUWlJNk1aSExGQXhPTEN6ajZjTVN0ZkNpRnlkbmRmS2tRQ3NXNFFTWHdWTWVzdDhMRVNITU1uWXlrV2VRWWxod3pSL0VZVklvV0lZQ0xLc0dMMXd6dmRGejFFZ0hOR1FoSnJVd3dsaVVBRVFKSXhNVXY1cUpIOEtFQ2tDSTd1WFExdUFZc2FaRVFad1lpSW9wUU13d2U3ZkJEbkZlcGQwb2lrclhCK2R3OHdaQ2hLZ0lRb0lZcU5WQ2dKU1Zibm8yNXdtd3ZIa01rb2owWEk5M1R5R1I0WmtUQWxWakFVRm5wRjdXWit0WXJDSERZdTBnLzkrNE5MTXVGNVlYYy9TVFZEazZFUWlZMGpZazFNa3VFakwvOVJUenlDbThKd0RKYU1xbGdVeXdabjJqVXl2bWZrQ2tiNnE2QWtZcjFSZWlTWllDVU5SNVZDUEc1VkJIUnhkMDh5b1JFeGZHZ1RBMkZyRkIvdzh5S05HSmZzcHBKdzlFUEdpb0lSbEEwL0dIRmx3eWVET1NLYUVFWEVFN2E0eUhYN0ZmYkNXbm5IcGRjSjBHY1BMb2w4cVVVRU1TZ2h4QWFYSEQ0YzhmQlQ3OFZ1WmtYbnc0ZGplYkhUT3BOQlhvcUN5ZkVoakRWUkRUOHhnakV4NnhQaWlHbEM2YnBGUlBvb25PbVY5WHlJaE9nejJzVG9acjEvWno4bUpFU3hZRUt1Uy84ajhaMlBRT2FqRVQ3S3dOR2liSEE3cHFSUU5uek5pS1RYeVE0WkU3TStJWm9RVHpRWmRvVWk1b21EbDQ1Y1hMTmk0REJOR3h2Yjhla1VFVHl3c3g4VFlxSllteFdYRCtoWXhoekhjejVRVnp5S05qbHdiQmdaSVRnOFYwTzRuRUlKTEJrS2dvbm13MTBSS2lMOVU4K3l3TTEwQ1pjQ0NTZ21mT3JnQ2Z2d1A3aTdwMmlJQ1RHQ2ZPaURaSXhMcUFCZ1pUNDBIS1ZLWjllZUREOUlpWVNyb2NpWUdERVFaUENFYVpwWm1hVG14dkZiMlM4b1RHWERCcXNKUVVMd1Z3ZVhiT00rdUx1bnNMQjhLSmxadUh4WTl3V2hMcHZxZkNBM2xPMWxDZzF1bVF4N2l0ZGZ2VXF0TFQrNTk4REVXSmJJZFcrRmNzQ2t4clZOVVlaalFZaUJCVkZNK09UbEFCOExveGt4YUVHcDNqakdKZU9abG9LakhCOTVjTFJJUnVPYWNiM041bDlsK2RqNTk1RVJmMnNSWXNENkZndENUTFFBRm9TL3pQQ3hjQVJHcnlqbjFPZ0hrdnl3dGlJY2dVMjhGVTZDOFRBMW93WUhkNTg4VFY2UENRZGNqWW5qZVBLVWFNbzhKWjRTVDVtbXhQcFh2WkVtekZQaTMzMyt5MVd2NXhmUHZUYzJZcUNVWTBGUWZQeUZ5OGRDNllvRFU4ajVRS1lYdDZaNCtKdUNjSFF0RzNsa2xFSGgyTW5UU3gwT3h4dGxtUkhYc2V0RWVCSlQ1Z2xKR21oS1BETmt6UFIyalk3MFA0VFBrWnFWajMvdDh0SS80U2YySHBpSCtIaGdaODlLaTNWQkZxNTRKSTVuV3RHeUxPTWpDMGZQWkJRQWtjZEJ3Yms4VnpRS3lZYU5WNmZFRXlzWWhvQ1pZVUx4TVdOZlN5YkVVK0hNNWtVck5xbTFBUDNxY3dkNWwvM1JzeGVOZlFFUjNiK3p0ekRPaDFJYTVheGt4U01KdWFXbEtyN3k4NmtlSEgyU2NlZXhuVlZvV0JxbmVMTEJNbVFWc3VFeFljbFE2MXRtSDZzbEUrS3B6cG1tYnFuNm9mMEFwTjJ0MnBvWW5aZ0RDNkxmK2ZxLytYL0FmMy9UT3JJWGQvWVdybmhZSzJNN2NvTjFoN1FTSHo0Y1hZY25iOTY2OWMzckwzdGsxQWFpVEhvallpZFRQaEhlaHBXTm1YRTFaaG9MbW5GaytORHJVNllaUlRNVjJacnZldGtPR2Ewa0lpTnVYQTNNUVhOS0ZxQTVZWTVrVGpRSC92QWJYMG41VUZId25YZGRlTXRicFhqWUdGam0xQk5VVDNnc0V3OExSN3VUZUhFR0N5S3laS3dldFJiMHRFblplUG1WSzZzZi8rUG4zeThwTVh5a3ZtM1dyRmd2Y21HQ0ZNbkVBc2x0d2h5WUUyNURyOHlCVHgxY01ueThrNGoyN3ZqMk9BMXJzY2pOaVFGbCt1Rks4REh0Z0l3c0ZwS014cGZYVzQ1c2YrTzVmOG43NkkvdSsxQ1UxaG95cFJrT1RoZ3hVUVJhbUM0WUFoRXpBY1Jzbi91RUtHRktRSWtkR1FHaS8vcFBlc2M3djNIamY0bG85NDV2WTVpWUM4d0V6aGw3WFhuYW9Nd1hsSEowWVZBc0ZoNFpxOHRHK2ZqMjlLbDNTWnVpWEZIdFZ6TFBqTGRoREFwdkVXOHh6emd5Szd4Ri9HdjVjSGpMSnk5K1dQYVdxWWRlZVJzTG9qa3dwMFJKaFZLTzIzb2xNU3RDUEFCNngzZWw4Zm5SdDhSQ1BKQVR0bFJRanRDdXZEWGJhdHVnV0N5T2JHOTdmbWc5TW9wcE9HNjhGam1NSUszaUVhbnVpWWsxYk9neEUzQnNNVzh4YnlsS21MY29VbHZVUjNvM2tmeVlFSDMwNlg4c3VMQS91L2k5QytHS3BuYUVjRnVUa2JLaXRzd0puekhCeTcwNjg0RXJOLzVQSGZDdW8zZkVjQ3hMa3ZiV29oMDRHcFdOVzgyUmtjZUU1OE5teHh4RWZ0R0dFNmRZT0d4NzIrYlhmSEMwUmJ6TlBDUGU1bWdtaUptU2ptSnNueHdUUFhMM01lZjZQdmVuM2dWLzRyNFBMb3g3b1JUaUZwSTU0WmJHSXJGa3FKK2Z2YXoxNDV5T2JPbmxtNXFQN3p4eU5ISHJ4SkpWNEhEM3pzRFJBaGtXaTNvNThpd1RCUkZOWUFSYlFEWk1rR0ppamFrd0tOWjh6RGphVHZVajJtYWVNVzhUenppeWltSkRYSlUzZTlqRFFpeVBYYnYrOEZOUGVCdC83OElIYmdOekpMYzBJbG84YmdPM2xIMGh6SUZITDZmRzVlenV2b2xaOFByTkcwVDA5cFNQVkR4b0ZUN01GMXc0V2lhamtteFVZcUpBTmloa1V5YWtFNk5URWJpcTdNVVdSMVkydHJYYkVja1Y0NHRFVzI1T3JJQU15NGQ2N24vbzZTOTRILzM2UFEvZFJuSmJpVWU2WWkxTzhuZVhMNm5tM3R1MWFURWtSUDl4OHdZUnZlM0lVUWtIclNnZUFUaGF0aVlsWmFNZUV3VndzRHZxeEpFTkp4L3F1eHBiek50R0pMYU56N0Z0Nk5reUhxdjY3aVBMeUZETG81b1BiVTErL0psLzhuYjRwWFB2VlE3SExlT1dLaUg1blBCTXorenVMVXkyUThGQlJOOXg1R2ppajNCcENvNm1BOWNhc3VGaFVTOGJsZ2RIV2twdUszcE1abk1xVXVNdUhORTJHMFEwSHdZWHc0cjY0ZytVSTBNdG43NTJmWkhHSnRxSS9OeXoveXozK2VuOUI2MkVXUC9qODhZelBXUDdiQWtKMFJzM2J5ZzQ1TWk1VmVFUWVZNHVsb0xoemhLTFJqS2taUml5ZVFRNXEwSnd6S01vQ0dMeGEvcXYwdUo5VngzdHQrNzlIcVVXS2s3K2crZi9uWWgrOU96OUtvM0JUQ3lhOThwTHorL3M3cXRzUjZ0TDFGNitLMi94K2wwdEdjZE9udTZFREM3b3Bjc09oeVJ2TExYT2dhWkRaeCtwSWh0RTlNamR4OXpLQVRrS2x6NTIvbjAvZis0OWFzOC9mdUhKUDMvaGFmdlJSeHJOSTVlR283WGJiek1jUWRub0hJdWlpeFh6Qk9wQVIvYkxPRk9CT2VyQ3RVN0o2UWdvZHFZb1ZJZjkyZjBIZjJydkFiWHRyMTk4SmdNMXYyenU1eHZHNTJqbnJRbnR5SWJuYlhpeVlRV2pWeXlXTytLaEdYK1ltejg3ZXpNRXFmOStiTy8rSHo3N2JpSjY3TVd2UG43bFdTTDZVSTU0dlAzSTBiVlJEc21IekpwbkJZTUdzS0RFUnlJaERUUi9kaFRNN2ZTRFp5K3FsWCs0K2pYL1R0NjhRVVIzSHIyanBUc3piZlZCUExLOS9lYXRXOWFtM0hsc3h3b0dEV1dCN1FVam16cGlKaEJZTnhpSTdkVERlcll1ZG9vbnFwOFNhZCtwTzJHZzB6TmlwbTU1K0YwWDVzRGpWNTc5NHRYbmlJamVlTjFhNnJzRUdieEd5cEZuWC9vbUk3Y3lMakFsaHIvZHpxK1NWbTQrZXUxNnBkTS9ldTI2eUVZZ2NjZStGbHpKUjA3ZjQ5OUpUUVphNGlOcVR6WThWOVNXOHd5aFdGdyt0VTU3d0crVnhQYWtFeEpBL0pyK3E3UjQzeFZEV3RLREI2ZHR1V1ROeWwzSDFaVy91bXpleEtFclIxQXpaQVRicFZ6QXI3OEZaYlVoMHpZSkFERWdNUjJZcEhGQmVmRjQ5TnAxQlZsTWtJZEtSOE9tYy8ya212RzNWNzc2K1N2UHFpTTh0SHRPcWdYOCtTcUg2bk53Q1RMVVQwVkdONTRweEl6U0xINVh6b1I5TklrSkFKalV4clRaUUFtemFVSk83RmhGNWdrb1ptSVFNeDY3ZHIxTTM0cXBBNlVFRkp0aEJ3NGlRa1grNUlXbjVOYy9mUHFlT1FDaTkrenVmL255SllncHNhbWR0OHUybXlITnk0cEtSRnJOa0NLTUxHeDIwWjJ5amVYMGJRbXhxc2hLQ0RFNFlZMUZSQnd6eGNEQ0dWYS9oQS9WNjZZNlJCYUV0Qm9VS1NJeDZMZXp4Y1pFMzMvbTNqbVFTRGZXWFB4ckwzMzkrTTUrK2ZpcjJ0Tyt0YlhWZ2NOUm93K1dtdXRlNmJlZVEzbWdkdFRhQXBnVFpEM0hMei83cGV4ZjhTTm4zMjNyT1d4bDBNTFVuOGFFcnh4Y1V1UG5qdS91ZS9VY2lSdHlZNWpLVWM4ZHlTT210cWlJT0pRTG5BeWo2cFF3eGFBSjYxOWpRc3kwQUVkTUN3S0RJbVZOS0QwdWlBRWtUQkhSMzF4N25kTVRBVzdwK1lJQ25iRjIrWm45QnhVeFNrak0rQ1ZLY3E3WjB3dXNpMW1SSXc5cVVKS0ZvNWE2S0c5Q0p5MVlSQ1dlNTVISU1RUjY0amFLUVRGVFJCeURZc2FDS0lLdEhtSW1QYVdvWm9zcFF0cFhwNVpzNlVaMitaWHo3N2MxcEdKa3JQSTg5RDl2NWpockhVSDBQMi9lZk51Um8zRG93TERNeWlvMnBmeFNJOFk1Y2ZKMDNrQklOVHJlRy85b0xZdGZabXpyeFBSSDBZejVGOXl1OWpMTDcxLzRnQjZhQU13cDhVWWsyTkxpdWZ5cHJVazY4RnFOMW4veThoUEtkVDIrdTVjZG1qQmNzMUpQTmlycFNrbGlYdXN2cmZLSit6NjRiTndLNW1hVS9jSnhWTk9mV2p6TXZKUnBKa2JNWmZ1dE45OTg2NUVqamZ1a1EvRTVtaVZHK3FUWDJvVGpOKzk1YUxVUmI0b1N4UWN0Vkh4cnd0MFlNbDNtRG43TTVtd1FkRVQ2ZXp2a1dpeDNuenpkN2xoWlVFSTBZWW9BTTFZV2xjYktMcVIrbU9sY2xNOWh4TU5nNFJnT2VLbTh4ak5obXdsSE1MMEJJdGJ1cWQ0QnBnc3RJYWdpd2dSSW1CT2QzUUxySEpmK3FkN0FwcjhGUFRSdFFwUXdJaWp4SUNZVnlQZ1pURG5LWHFjNmpIMFI2N0M2b3FjQzB3RkxSallnT2dIeW9jQVE0T0RCVXdLQ3FMVVR1VkZEQmtBSmcwME9sRUhNckxLZlpNaUErWm55UVRSaHhPQUpJV0tPZ0x4cG42eFprVE50TEZMbDhQZ0k1RS90REVIQjEyNTR2UUdOdks2OG1XaWxtMUJsaFZSWVd6UDd5RW5sNUd6RzRRbmo1QndLb1psOUhDMnhKa2JNN0pPZFZ2Q3BnMHNLbXJ2Tit4Z284NDZ3MGF3c3R5eXliSUxaRVE4UUVtSUc5TXNQZ0ppVjU2RGttNGtoTlNNaG1vSVNwZ2xvb2gwT2lnaVI4V3hJakc4dU9TZFk3SkpodW1DY0NTcTlGL2FRUDlWMXcwbjB6WGRJQlNWT2hwU01UU0d3NmgxSlNQZWlxVjQ0WmtwdEVSZ01UUVpvU3BRd1RVRXgwWVJwSWx4UkpqWDQzVGNyeGJNSkdqOURrZ0Z2aGxyWUJHNG1reUZoYU5BajNYdzRNczVINnAxQ2Q5TUM0RVNIR05wZU0zRk1RamFJWVBrZ2pVaENtRERIVU9aSitSektyS0RTUEtTeEFHSWhUSStGS1ozK3kzbFBqek1QS1EyOHl6NHZwOWxYNlpmWFdZK01ld1FUd1NnK3dFaTBackRqd3RvWXg5Z1U5U2pIVEJNWUxJZ2lRSXhweUZhS2hHY3c5bWFTek01Z25Cb1Vsd3dpZXZuVks5KzYvZ3FGU2pyR0pGZ2RZTEpEZ1dDcnVkSmdONDFQUUFDem5yL2NSQ2dKVTBJVWdXS1ZnMCs3VkZCcDd2TTRmVk5DT2wreE4vZDU0c3g5SGk0b2JLZWNveE00ZWhTUGtKWVlQOU1VLzFqamtraWhNWHpBckZ2ck16SEtFVEZGb0pnb1Vta1NXOTdoK3dLQnR5WWtSam1raW1UZm1pQ0xnQnlEUW5JS0s2Q2QyOVdSY3ZURmgxOEdKbkllQWhZUWNVSVU2ZVpQK1lES2NoQUJOR0VDVVdUeW9VbzVkSVNpK21sQm5rM0pXQmJ0TnppMWhtSkdVZTk5SzRsNDM0cm9sUVVKTW9JdnUyK0tsZFpyU0lPRkduM0pCbVhMdStIVmN6alo3Z1N3bWFzRlRBK0lxTDZaays0L3U0MUViZFJENCtVL3dIeVVlTithbXltZ0Z0Q1owOWljTk1sOVV4TzlaTWc0Y2ZJTXRWWkFTdDBVR1BmTEIvSXBDWTRBa0M4M2ljbG1LbTN5Q2d1UnVacERUT0JFdUUyaS85MndJait5MnhjQ0M1UDVnRGhYV25Yc3BrUVJKS1BaOUVhbmNBeEhQeERLQ3NqZUxHdmRCUitteld5ZnFuN1FkYlhmM0czMVZEL2dVQ0xFUm45TEhjUWUwNTRpTFV3WFBvcEh4c21UWjFyS2JmUUFSNzk4SUd4YzBtU3pWeVlqUjZsSUNSRnRhWEpXMEcyOE1DV0F0dmxEdjZiN3A5Mno2ZXptUWpEY2tTeFpNcXE5K204dFFsbGJkTjd2b0VpYjloQXhxemNza2trblRIWDJsQWtnaW9nQnFGeHF4Snlvd0ZYMTJnQ2MwODJVTVdTNWI2Ukd6aHVwcjdxQ1VmQkc2blZWam40bEJMbk9hVlkvWkRTaHM1azY2Mld0alBFVnBHYVUvcGQrVi9zME5oOEtNcVZmNmRuTGs3RitHZExoU0VodWtVZEFQL3pkRTlXSnJ5ZGEwZjN5aWM1cXdIL1hjT2pGc2xrdm1Qd0JqMzZKMTlWWFhsUUhPS1h0U05Fdy96WWtwSzB1ZXlyWGE5L3hoRStjODZ2MzluSktwNmgyM3htWW1XcU0zRmZITFRVcjVMN1lRRTdlRmNTaWdBd1FQYTNmWDB3bmR2ZUgyeXVMdXZVKzJkR1IzUXlOREtYSTNNeTYyNE1MWnlJbzNmVXFHQUlYUGlmSU9oL0lnTElFQ3lvWXA5UlNRRHVJdnBVdUI5Qm0rYUMwVzA1M3RYa214aVRkTlNJazBxQXFVODdadWFPSytQQ3REQkZkRVV3UTBhbFRad2krM3JUS3dYRGh5Q0xTS2lYQk9pQlJUVWlRRlNEa0lBSWlDNUF3SlV0bXlNaUpwWDBtZ2xnVUQyeHNOVm9aWEs5c05wWnBnNUpROTcwcytJQXp1YU83dHdHSTdENjh6UDN5NExpYVlXTG4xQms1eTArMkxEUm9TdEJ5V3d5M3k3NERTdkpNakNXQWNoQXhwZ2NjK0NMbEZTaGV6YndLNk5TcE14NEY4SUtjUGdTajRXZ2w3NkZwdHN5NDVGc1RWci9zVUZEREFZVmdLblkxOGw0TXBaa0lEemhCU1dkVGhpb3RvYk5PeFQ1NTJiTVZCK1BubFNLejg2dnJpM2p0YVZoNXBmQTFZVGI2eUdsRmxFbHFvY01idnBhVllGN3pseG1NWDh3TktOOFl1TDRJVlJsZmFickhpbVVBSlpzZm5kL25qc3dLZFRpQXBjZU8zeE1aR25MYUdKWGFQdnVSdFNscmJGWk83TzYvMXZLTWQ1VmNrRWE0T1c3ZWY5NVUwRVFyU0VXV2pJR2FGUXg0WE9RcXJpdFhhVG11Mjh4TlBmZmp1SlZPRnhTR0pBMjJEUWIyaDBkdDNNZWc3a2t6dWFhSTVFekcxZlV4QzRMWU1Wb1prSnhzOWxWRkhWemZ4b2pIRUpZT2NsOHR3akV1RzdORUhldmpLQjVyZFBkYVVRNTBHNDRmd3FVRG0yTGdHTVZqbEkwdWZZNVJQTlpkTmdRY28zaU1zdUhoQnFrY2FQNzRvM2gwSUJ0ZG1SVnM3cU93dWJLQmp1Qm8rbFNqZUt5ZnR5RXkrVkduS0xwLzRTZ2VsV1NqaStjS3ZuS2d3OU9OeG1VOURFcGhLTnVoY1JuNUtFTkdSd1lsQkFkNk5DN2pNb2g3aFNMbDZNRzRqTTVIYlZjREhUUVBJU3JhWll4c0IrbHFkTElnNjNPMHlBZVdDZWJJUnhsWG95dlpDRHVrSXgrSG5JdzAwUkYxSENLTmZBeWVES0VjcU4ya3JUbmtoNU9QcFdSUXQyVGs1emxhTmk2amZ0VFFESFFPUzVUZjdqM1VWeDlPUHJyV2pFRGJvc2doUlpsRVdNdHAwOFBKUnhreU9ndFB2TDJpWmQ4YStkaDRNbkkzOFd3MmsxdHpCdjN4MGoxcUwzbkg4MFpnOS9XV3lRNnc2STZNRWdZRkJRN3Bjc2VuL1lLeDRQM2FKQWxaQ3pJQ3lwSC9OSE9wNTcxcC9hQ2VKdm5vM2Yzc25veXljQXlaai9WRnBLUmdESVNNSWpnR3pzZDZJWksxaWIyUzRXL0tuV3VrQUk1UWE3VUx4OUpEcmgwaWxiQ2dscEpMcUM0alplQllDejZHaVVqUWd4NGFHY1ZuWEE1SEwzeXNOU0pEd1dJRnpWZ0Zqa0h3TVVCRWFtQXhXRExLd3RFakg3VVI2UXlVZ2dSTWIxZzBRVVlGT0piejBlWkVnaVdQM1NVbHF6RFJPaG5MWEl1U3A2NEF4M0xuWS9DSTFNYWxaSDUyZUZoVWRrTHJ3N0V1ZkZTaVpQV2xVajk3NjVVUWFJYU1PbkQwRmJ5c2VJYkdRYWxSZU5GRmdVeHpaTlNFWXdoOHJINlNTcmlzV0lQVFVkMVVvMlRVaDJNZ2ZIUitxa0V5MFZ4NDRpMVJXMWVIVG04TGhvZkZ1cE94RWh3WUVoL1U5TVRUNjNRTjdaQkJLMDV2SFhwTmdydXQwcHp5VGQ4cjdxdDErclJiYVBEYW9oYnVDd1p5ODlwK2pudldxcGJKb0VZbXhsK3VIOVR6dTFqUWhBODdMTGVtZlRLb3pkZVZENHVQUWJmMElNbG9NbG9ac24zWnFLVXJNcWo5MTNobFBOSStYTlREZzBXekQyRHpiMm9hSmFSSHdSajZ5M2pHcHQ4WUwycmEzclh5YUYvV3pjbm9RamxHRjNVRHlLQzJYd0E0dXFocjVINTJxaHlGVno5S3lOREpvRzVlQUlpRzl4dDl5NDd1MXJUdmU4Qkx0eDE2TEhwN2FLTE8vdW9LazB0aEpHT0pOY0Vtd2JITS96ajBMa2hwQnJxOE1WSDNOMkYwUVdvN0dSM2ZrbWd3ZCtPdzJwZHkxcVNYT3pFZDNuMDZOQzdxd056UG9TaEhJN0l5a3JHeHlqSG1SWWZ2ZWsySDhKZHptYzBiUTFPVmtIVTBLeFZUSUZobkxOYUhqR0g2SEJzYTVhN2hOVWMwTHVPU3Mvdy82a2xKUFB3blAzb0FBQUFBU1VWT1JLNUNZSUk9Iiwic2l6ZXMiOiIxODB4MTgwIiwidHlwZSI6ImltYWdlL3BuZyJ9XX0=" />
+<link rel="preconnect" href="https://de1.api.radio-browser.info" crossorigin />
+<link rel="preconnect" href="https://nl1.api.radio-browser.info" crossorigin />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+<title>Random Radio v70</title>
+<style>
+:root{--bg:#050505;--text:#f5f0ea;--muted:#938c84;--red:#e1192d;--green:#36ff8b}
+*{box-sizing:border-box}html,body{height:100%;margin:0}
+body{background:radial-gradient(circle at 50% 42%,#171012 0,#070707 45%,#020202 100%);color:var(--text);font-family:Inter,-apple-system,BlinkMacSystemFont,'SF Pro Display','Helvetica Neue',Arial,sans-serif;overflow:hidden}
+body:before{content:'';position:fixed;inset:0;background:radial-gradient(circle at 50% 50%,rgba(225,25,45,.14),transparent 30%),linear-gradient(180deg,rgba(255,255,255,.035),transparent 32%,rgba(0,0,0,.25));pointer-events:none}
+.app{position:relative;min-height:100dvh;display:flex;align-items:center;justify-content:center;padding:22px 16px calc(20px + env(safe-area-inset-bottom))}
+.shell{position:relative;width:min(430px,100%);min-height:min(850px,calc(100dvh - 24px));border:1px solid rgba(255,255,255,.09);border-radius:38px;background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.022));box-shadow:0 36px 100px rgba(0,0,0,.68),inset 0 1px 0 rgba(255,255,255,.08);display:flex;flex-direction:column;align-items:center;padding:32px 20px 22px;overflow:hidden;backdrop-filter:blur(16px)}
+header{text-align:center;z-index:2}.brand{font-size:40px;line-height:.96;font-weight:780;letter-spacing:-.065em;cursor:default}.brand .r{color:var(--red);text-shadow:0 0 22px rgba(225,25,45,.75)}.tag{margin-top:12px;color:var(--muted);font-size:13px;letter-spacing:.015em}
+.tag b{color:#c9c2ba;font-weight:600}
+.globeArea{position:relative;z-index:2;width:min(92vw,382px);aspect-ratio:1;margin:24px 0 10px;display:grid;place-items:center}
+#globeBtn{position:absolute;inset:0;border:0;padding:0;background:transparent;border-radius:50%;cursor:pointer;touch-action:manipulation;z-index:6}#globeBtn:active{transform:scale(.985)}
+canvas{width:100%;height:100%;display:block;border-radius:50%;filter:drop-shadow(0 0 30px rgba(225,25,45,.18)) drop-shadow(0 26px 45px rgba(0,0,0,.7))}
+.orbit{position:absolute;inset:7%;border:1px solid rgba(225,25,45,.23);border-radius:50%;transform:rotateX(62deg) rotateZ(-18deg);box-shadow:0 0 34px rgba(225,25,45,.12);pointer-events:none}
+.wave{position:absolute;inset:0;border-radius:50%;border:2px solid rgba(54,255,139,.55);opacity:0;pointer-events:none;z-index:3}.traveling .wave{animation:ripple 1.18s ease-out infinite}.traveling .wave.w2{animation-delay:.38s}.traveling .wave.w3{animation-delay:.76s}
+@keyframes ripple{0%{transform:scale(.985);opacity:.62;border-color:rgba(54,255,139,.72)}66%{opacity:.16}100%{transform:scale(1.18);opacity:0;border-color:rgba(54,255,139,0)}}.traveling canvas{filter:drop-shadow(0 0 50px rgba(54,255,139,.32)) drop-shadow(0 26px 45px rgba(0,0,0,.7))}
+.plane{position:absolute;left:50%;top:50%;width:26px;height:26px;margin:-13px 0 0 -13px;display:grid;place-items:center;color:rgba(255,246,235,.94);font-size:22px;line-height:1;text-shadow:0 0 12px rgba(255,255,255,.34),0 0 22px rgba(225,25,45,.24);opacity:0;transform-origin:50% 50%;pointer-events:none;z-index:5}
+.traveling .plane{opacity:1;animation:planeTravel 4.8s linear infinite}
+/* 궤도 반지름은 지구본 크기에 맞춰 JS가 --orbitR 변수로 주입.
+   기수 각도 76deg = 시계방향 공전의 접선 방향(진행 방향으로 날아가는 느낌) */
+@keyframes planeTravel{
+  0%{transform:rotate(0deg) translateX(var(--orbitR,168px)) rotate(90deg) scale(.9);opacity:0}
+  6%{opacity:1}
+  44%{opacity:1}
+  50%{transform:rotate(180deg) translateX(var(--orbitR,168px)) rotate(90deg) scale(1);opacity:0}
+  68%{opacity:0}
+  74%{transform:rotate(266deg) translateX(var(--orbitR,168px)) rotate(90deg) scale(.85);opacity:.9}
+  100%{transform:rotate(360deg) translateX(var(--orbitR,168px)) rotate(90deg) scale(.9);opacity:0}
+}
+@media(prefers-reduced-motion:reduce){.traveling .plane,.traveling .wave,.tap .finger{animation:none}}
+.tap{position:absolute;left:50%;bottom:7.5%;transform:translateX(-50%);display:flex;align-items:center;justify-content:center;gap:5px;padding:5px 9px;border-radius:999px;background:rgba(255,255,255,.075);border:1px solid rgba(255,255,255,.16);box-shadow:0 10px 28px rgba(0,0,0,.24),inset 0 1px 0 rgba(255,255,255,.08);color:#fff2e8;pointer-events:none;backdrop-filter:blur(10px);z-index:7}
+.tap .finger{font-size:16px;line-height:1;filter:drop-shadow(0 0 8px rgba(255,255,255,.22));animation:fingerTap 1.8s ease-in-out infinite}
+.tap .tapText{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,242,232,.86);font-weight:680}
+@keyframes fingerTap{0%,100%{transform:translateY(0) scale(1);opacity:.86}42%{transform:translateY(-2px) scale(1.05);opacity:1}58%{transform:translateY(1px) scale(.96);opacity:.92}}
+.info{z-index:3;width:min(360px,100%);margin-top:auto;padding:8px 16px 0;text-align:center;position:relative;display:flex;flex-direction:column;align-items:center}.country{color:var(--green);font-size:13px;letter-spacing:.18em;text-transform:uppercase;text-shadow:0 0 18px rgba(54,255,139,.45);min-height:18px;text-align:center;margin:0 auto 4px;font-weight:650}.station{margin:0 auto;font-size:14px;font-weight:520;letter-spacing:-.005em;line-height:1.18;min-height:36px;text-align:center;display:flex;align-items:flex-start;justify-content:center;max-width:280px;text-wrap:balance;color:#fff7ee}
+.genre{margin:2px auto 0;color:var(--muted);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;min-height:13px}
+.statusWave{display:none;height:20px;align-items:center;gap:3px;margin-top:-4px;margin-bottom:10px}.travelingState .statusWave{display:flex}.statusWave i{display:block;width:3px;height:8px;border-radius:99px;background:var(--green);box-shadow:0 0 12px rgba(54,255,139,.85);animation:bar 760ms ease-in-out infinite}.statusWave i:nth-child(2){animation-delay:80ms}.statusWave i:nth-child(3){animation-delay:160ms}.statusWave i:nth-child(4){animation-delay:240ms}.statusWave i:nth-child(5){animation-delay:320ms}.statusWave i:nth-child(6){animation-delay:400ms}.statusWave i:nth-child(7){animation-delay:480ms}@keyframes bar{0%,100%{height:6px;opacity:.55}50%{height:20px;opacity:1}}
+.favRow{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:10px}.fav{width:40px;height:40px;display:grid;place-items:center;border-radius:50%;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05);color:var(--text);font-size:18px;cursor:pointer;backdrop-filter:blur(12px);flex:none}.fav.on{color:var(--red);border-color:rgba(225,25,45,.42);background:rgba(225,25,45,.11);box-shadow:0 0 20px rgba(225,25,45,.18)}
+.fav.sleepOn{color:var(--green);border-color:rgba(54,255,139,.4);background:rgba(54,255,139,.08);box-shadow:0 0 20px rgba(54,255,139,.16)}
+.sleepInfo{min-height:13px;margin-top:6px;color:var(--muted);font-size:10px;letter-spacing:.13em;text-transform:uppercase}
+.drawer{position:absolute;left:18px;right:18px;bottom:18px;z-index:10;border-radius:26px;background:rgba(9,9,9,.82);border:1px solid rgba(255,255,255,.1);box-shadow:0 -18px 70px rgba(0,0,0,.58),inset 0 1px 0 rgba(255,255,255,.06);backdrop-filter:blur(20px);transform:translateY(calc(100% + 24px));transition:transform .32s ease;max-height:44%;display:flex;flex-direction:column;overflow:hidden}.drawer.open{transform:translateY(0)}
+.drawerHead{display:flex;align-items:center;justify-content:flex-end;padding:7px 8px 2px}.close{width:24px;height:24px;border-radius:50%;border:1px solid rgba(225,25,45,.46);background:rgba(225,25,45,.18);color:#ff6b72;font-size:15px;line-height:1;cursor:pointer;padding:0;display:grid;place-items:center;box-shadow:0 0 16px rgba(225,25,45,.18)}.favList{overflow:auto;padding:0 7px 8px}.empty{padding:18px 10px 24px;color:#817a73;font-size:11px;text-align:center}
+.favItem{width:100%;display:grid;grid-template-columns:1fr auto;gap:6px;align-items:center;padding:7px 6px;border:0;border-top:1px solid rgba(255,255,255,.055);background:transparent;color:var(--text);text-align:left;cursor:pointer}
+.favItem .meta{display:block;font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--green);opacity:.86}.favItem .name{display:block;font-size:11.5px;line-height:1.12;margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.remove{width:19px;height:19px;border-radius:50%;border:1px solid rgba(255,255,255,.07);background:rgba(255,255,255,.03);color:#7e7770;cursor:pointer;font-size:11px}
+.notice{margin-top:8px;color:#706a64;font-size:9.5px;line-height:1.25;max-width:300px;text-align:center}
+/* 숨은 디버그 패널: 로고 5회 탭으로 열림 */
+.debug{position:absolute;inset:14px;z-index:20;display:none;flex-direction:column;background:rgba(5,5,5,.95);border:1px solid rgba(54,255,139,.28);border-radius:24px;padding:12px 14px;backdrop-filter:blur(14px)}
+.debug.open{display:flex}
+.debugHead{display:flex;justify-content:space-between;align-items:center;color:var(--green);font-size:10px;letter-spacing:.2em;font-weight:650}
+#debugBody{flex:1;overflow:auto;margin:8px 0 0;font:9.5px/1.55 ui-monospace,SFMono-Regular,Menlo,monospace;color:#b9b2aa;white-space:pre-wrap;word-break:break-all;user-select:text;-webkit-user-select:text}
+@media(max-height:760px){.shell{padding-top:22px}.brand{font-size:34px}.globeArea{width:min(84vw,324px);margin:14px 0 6px}.station{font-size:13px;min-height:32px}.fav{width:38px;height:38px}.drawer{max-height:50%}}
+
+/* 작은 화면: 액자 속 액자를 풀고 화면 가득 채운다 */
+@media(max-width:520px){
+  .app{padding:0}
+  .shell{width:100%;min-height:100dvh;border:0;border-radius:0;box-shadow:none;
+    padding:calc(20px + env(safe-area-inset-top)) 18px calc(16px + env(safe-area-inset-bottom))}
+  .drawer{left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom))}
+  .debug{inset:calc(10px + env(safe-area-inset-top)) 10px calc(10px + env(safe-area-inset-bottom))}
+}
+/* 현지 시각: 플립시계 스타일 — 숫자 하나당 카드 하나 */
+.clock{display:flex;align-items:center;justify-content:center;gap:3px;min-height:23px;margin:-2px auto 9px}
+.clock:empty{min-height:0;margin:0 auto 5px}
+.fd{position:relative;width:16px;height:22px;border-radius:4.5px;
+  background:linear-gradient(180deg,#232220 0%,#1a1918 48%,#131211 52%,#161514 100%);
+  border:1px solid rgba(255,255,255,.09);
+  box-shadow:0 2px 7px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.06);
+  display:grid;place-items:center;
+  font-size:12.5px;font-weight:650;color:#efe8df;font-variant-numeric:tabular-nums;line-height:1}
+.fd:after{content:'';position:absolute;left:1.5px;right:1.5px;top:50%;height:1px;background:rgba(0,0,0,.6)}
+.fcol{color:#6d6660;font-size:11px;font-weight:700;margin:0 1px;transform:translateY(-1px)}
+.fap{height:22px;display:grid;place-items:center;padding:0 5px;margin-left:4px;border-radius:4.5px;
+  background:linear-gradient(180deg,#232220,#131211);
+  border:1px solid rgba(255,255,255,.09);
+  box-shadow:0 2px 7px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.06);
+  font-size:8.5px;letter-spacing:.1em;font-weight:700;color:#b3aca3}
+/* 방송국명 탭 = 일시정지/재개 */
+.station{cursor:pointer;-webkit-tap-highlight-color:transparent}
+.info.paused .station{opacity:.5}
+.info.paused .country{opacity:.6;text-shadow:none}
+/* SVG 아이콘 공통 */
+.fav svg{width:19px;height:19px;display:block}
+.fav .fh{display:none}
+.fav.on .fo{display:none}
+.fav.on .fh{display:block}
+.plane svg{width:24px;height:24px;display:block;filter:drop-shadow(0 0 6px rgba(255,255,255,.3))}
+.tap svg{width:15px;height:15px;display:block}
+</style>
+</head>
+<body>
+<div class="app"><main class="shell" id="shell">
+<header><div class="brand" id="brand"><span class="r">R</span>andom <span class="r">R</span>adio</div><div class="tag">World trip by radio. · <b id="poolCount">…</b> music channels</div></header>
+<section class="globeArea" id="globeArea"><span class="wave w1"></span><span class="wave w2"></span><span class="wave w3"></span><span class="plane" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><g transform="rotate(90 12 12)"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></g></svg></span><canvas id="globe"></canvas><span class="orbit"></span><button id="globeBtn" aria-label="Play a random radio station from somewhere in the world"></button><span class="tap" aria-hidden="true"><span class="finger"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="2.6" fill="currentColor" stroke="none"/><path d="M5.6 5.6a9 9 0 0 0 0 12.8M18.4 5.6a9 9 0 0 1 0 12.8" opacity=".85"/></svg></span><span class="tapText">tap</span></span></section>
+<section class="info" id="info"><div class="country" id="country">WORLD</div><div class="clock" id="clock" aria-hidden="true"></div><div class="station" id="station" role="button" tabindex="0" aria-label="Pause or resume">Tap the globe.</div><div class="genre" id="genre"></div><div class="statusWave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="favRow"><button id="fav" class="fav" aria-label="Favorite station"><svg class="fo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M12 20.4S4.8 15.7 2.9 11.6A5.3 5.3 0 0 1 12 6.9a5.3 5.3 0 0 1 9.1 4.7C19.2 15.7 12 20.4 12 20.4z"/></svg><svg class="fh" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 20.4S4.8 15.7 2.9 11.6A5.3 5.3 0 0 1 12 6.9a5.3 5.3 0 0 1 9.1 4.7C19.2 15.7 12 20.4 12 20.4z"/></svg></button><button id="sleep" class="fav" aria-label="Sleep timer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button></div><div class="sleepInfo" id="sleepInfo"></div><div class="notice">Public internet radio streams. Rights belong to each broadcaster and rights holder.</div></section>
+<section class="drawer" id="drawer"><div class="drawerHead"><button class="close" id="closeDrawer" aria-label="Close favorites">×</button></div><div class="favList" id="favList"></div></section>
+<section class="debug" id="debug" aria-hidden="true"><div class="debugHead"><span>DEBUG · RANDOM RADIO v70</span><button class="close" id="closeDebug" aria-label="Close debug">×</button></div><pre id="debugBody"></pre></section>
+</main></div>
+<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
+<script>
+(()=>{'use strict';
+
+/* ═══════════════════════════════════════════════════════════════
+   Random Radio v70 — 심야의 세계 라디오 여행
+   구조: 0.설정 → 1.상태 → 2.유틸 → 3.좌표 → 4.API/채널풀
+        → 5.오디오 엔진 → 6.슬립 타이머 → 7.즐겨찾기/마지막 상태
+        → 8.지구본 렌더링 → 9.부팅
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ───────────────────────── 0. 설정·상수 ───────────────────────── */
+
+/* Radio Browser 미러 서버. 앞의 5개를 무작위로 섞어 시도하고,
+   전부 실패하면 DNS 라운드로빈인 'all'을 마지막에 시도한다. */
+const API=['https://de1.api.radio-browser.info','https://de2.api.radio-browser.info','https://nl1.api.radio-browser.info','https://at1.api.radio-browser.info','https://fi1.api.radio-browser.info'];
+const API_LAST='https://all.api.radio-browser.info';
+const WORLD_URLS=['https://cdn.jsdelivr.net/npm/world-atlas@2/land-110m.json','https://unpkg.com/world-atlas@2/land-110m.json'];
+
+/* 비상용 시드 방송국 — API가 전부 죽어도 최소 동작 보장.
+   전부 HTTPS 직결 스트림, 검증된 대형 방송국만. */
+const SEEDS=[
+{name:'NTS Radio',countrycode:'GB',url_resolved:'https://stream-relay-geo.ntslive.net/stream',geo_lat:51.5072,geo_long:-0.1276,stationuuid:'seed-nts',tags:'eclectic',codec:'MP3',bitrate:128,hls:0},
+{name:'KEXP',countrycode:'US',url_resolved:'https://kexp-mp3-128.streamguys1.com/kexp128.mp3',geo_lat:47.6062,geo_long:-122.3321,stationuuid:'seed-kexp',tags:'indie',codec:'MP3',bitrate:128,hls:0},
+{name:'FIP',countrycode:'FR',url_resolved:'https://icecast.radiofrance.fr/fip-midfi.mp3',geo_lat:48.8566,geo_long:2.3522,stationuuid:'seed-fip',tags:'eclectic',codec:'MP3',bitrate:128,hls:0},
+{name:'SomaFM Groove Salad',countrycode:'US',url_resolved:'https://ice3.somafm.com/groovesalad-128-mp3',geo_lat:37.7749,geo_long:-122.4194,stationuuid:'seed-soma1',tags:'ambient',codec:'MP3',bitrate:128,hls:0},
+{name:'SomaFM Drone Zone',countrycode:'US',url_resolved:'https://ice1.somafm.com/dronezone-128-mp3',geo_lat:37.7749,geo_long:-122.4194,stationuuid:'seed-soma2',tags:'ambient',codec:'MP3',bitrate:128,hls:0},
+{name:'SomaFM Lush',countrycode:'US',url_resolved:'https://ice2.somafm.com/lush-128-mp3',geo_lat:37.7749,geo_long:-122.4194,stationuuid:'seed-soma3',tags:'chillout',codec:'MP3',bitrate:128,hls:0},
+{name:'SomaFM Secret Agent',countrycode:'US',url_resolved:'https://ice1.somafm.com/secretagent-128-mp3',geo_lat:37.7749,geo_long:-122.4194,stationuuid:'seed-soma4',tags:'lounge',codec:'MP3',bitrate:128,hls:0},
+{name:'Radio Paradise',countrycode:'US',url_resolved:'https://stream.radioparadise.com/mp3-128',geo_lat:39.7392,geo_long:-104.9903,stationuuid:'seed-rp1',tags:'eclectic',codec:'MP3',bitrate:128,hls:0},
+{name:'Radio Paradise Mellow',countrycode:'US',url_resolved:'https://stream.radioparadise.com/mellow-128',geo_lat:39.7392,geo_long:-104.9903,stationuuid:'seed-rp2',tags:'chillout',codec:'MP3',bitrate:128,hls:0},
+{name:'Radio Paradise Rock',countrycode:'US',url_resolved:'https://stream.radioparadise.com/rock-128',geo_lat:39.7392,geo_long:-104.9903,stationuuid:'seed-rp3',tags:'rock',codec:'MP3',bitrate:128,hls:0}
+];
+
+/* 음악 밀도를 보장하는 장르 태그 목록(세션마다 셔플).
+   전체 DB 스윕과 병행해 채널 풀을 채운다. */
+const MUSIC_TAGS=['jazz','classical','ambient','chillout','lounge','electronic','house','techno','rock','indie','pop','hip-hop','soul','funk','reggae','latin','world music','folk','blues','oldies','disco','dance','instrumental','piano','bossa nova','downtempo','trance','metal','alternative','rnb','salsa','afrobeat','tango','flamenco','fado','bollywood','k-pop','j-pop','arabic','gospel','ska','dub','synthwave','lofi','smooth jazz','opera'];
+
+/* ISO 3166-1 국가코드 → 국가 중심 좌표 [위도, 경도].
+   Radio Browser의 geo 데이터는 오류가 많아, 지구본 표시는
+   반드시 이 테이블을 기준으로 검증한다. */
+const CC={AD:[42.5,1.6],AE:[24,54],AF:[33.9,67.7],AG:[17.1,-61.8],AI:[18.2,-63.1],AL:[41.2,20.2],AM:[40.1,45],AO:[-11.2,17.9],AR:[-38.4,-63.6],AS:[-14.3,-170.7],AT:[47.5,14.6],AU:[-25.3,133.8],AW:[12.5,-70],AX:[60.2,20],AZ:[40.1,47.6],BA:[43.9,17.7],BB:[13.2,-59.5],BD:[23.7,90.4],BE:[50.5,4.5],BF:[12.2,-1.6],BG:[42.7,25.5],BH:[26,50.6],BI:[-3.4,29.9],BJ:[9.3,2.3],BL:[17.9,-62.8],BM:[32.3,-64.8],BN:[4.5,114.7],BO:[-16.3,-63.6],BR:[-14.2,-51.9],BS:[25,-77.4],BT:[27.5,90.4],BW:[-22.3,24.7],BY:[53.7,27.9],BZ:[17.2,-88.5],CA:[56.1,-106.3],CD:[-4,21.8],CF:[6.6,20.9],CG:[-0.2,15.8],CH:[46.8,8.2],CI:[7.5,-5.5],CK:[-21.2,-159.8],CL:[-35.7,-71.5],CM:[7.4,12.4],CN:[35.9,104.2],CO:[4.6,-74.3],CR:[9.7,-83.8],CU:[21.5,-77.8],CV:[16,-24],CW:[12.2,-69],CY:[35.1,33.4],CZ:[49.8,15.5],DE:[51.2,10.4],DJ:[11.8,42.6],DK:[56.3,9.5],DM:[15.4,-61.4],DO:[18.7,-70.2],DZ:[28,1.7],EC:[-1.8,-78.2],EE:[58.6,25],EG:[26.8,30.8],EH:[24.2,-12.9],ER:[15.2,39.8],ES:[40.4,-3.7],ET:[9.1,40.5],FI:[61.9,25.7],FJ:[-17.7,178],FM:[7.4,150.6],FO:[62,-6.8],FR:[46.2,2.2],GA:[-0.8,11.6],GB:[54.3,-2.3],GD:[12.1,-61.7],GE:[42.3,43.4],GF:[4,-53],GG:[49.45,-2.6],GH:[7.9,-1],GI:[36.1,-5.3],GL:[71.7,-42.6],GM:[13.4,-15.3],GN:[9.9,-9.7],GP:[16.3,-61.6],GQ:[1.6,10.3],GR:[39.1,21.8],GT:[15.8,-90.2],GU:[13.4,144.8],GW:[11.8,-15.2],GY:[4.9,-58.9],HK:[22.3,114.2],HN:[15.2,-86.2],HR:[45.1,15.2],HT:[19,-72.3],HU:[47.2,19.5],ID:[-2.5,118],IE:[53.4,-8.2],IL:[31,34.9],IM:[54.2,-4.5],IN:[22.4,79],IQ:[33.2,43.7],IR:[32.4,53.7],IS:[64.9,-19],IT:[42.6,12.6],JE:[49.2,-2.1],JM:[18.1,-77.3],JO:[30.6,36.2],JP:[36.2,138.3],KE:[0.2,37.9],KG:[41.2,74.8],KH:[12.6,105],KI:[1.9,-157.4],KM:[-11.9,43.9],KN:[17.3,-62.7],KP:[40.3,127.5],KR:[36.5,127.9],KW:[29.3,47.5],KY:[19.3,-81.3],KZ:[48,66.9],LA:[19.9,102.5],LB:[33.9,35.9],LC:[13.9,-61],LI:[47.2,9.6],LK:[7.9,80.8],LR:[6.4,-9.4],LS:[-29.6,28.2],LT:[55.2,23.9],LU:[49.8,6.1],LV:[56.9,24.6],LY:[26.3,17.2],MA:[31.8,-7.1],MC:[43.75,7.4],MD:[47.4,28.4],ME:[42.7,19.4],MF:[18.1,-63.05],MG:[-18.8,47],MH:[7.1,171.2],MK:[41.6,21.7],ML:[17.6,-4],MM:[21.9,96],MN:[46.9,103.8],MO:[22.2,113.5],MQ:[14.6,-61],MR:[21,-10.9],MS:[16.7,-62.2],MT:[35.9,14.4],MU:[-20.3,57.6],MV:[3.2,73.2],MW:[-13.3,34.3],MX:[23.6,-102.6],MY:[4.2,102],MZ:[-18.7,35.5],NA:[-22.9,18.5],NC:[-20.9,165.6],NE:[17.6,8.1],NG:[9.1,8.7],NI:[12.9,-85.2],NL:[52.1,5.3],NO:[61,8.5],NP:[28.4,84.1],NR:[-0.5,166.9],NU:[-19.05,-169.9],NZ:[-41.5,172.8],OM:[21.5,55.9],PA:[8.5,-80.8],PE:[-9.2,-75],PF:[-17.7,-149.4],PG:[-6.3,143.9],PH:[12.9,121.8],PK:[30.4,69.3],PL:[51.9,19.1],PM:[46.9,-56.3],PR:[18.2,-66.6],PS:[31.9,35.2],PT:[39.4,-8.2],PW:[7.5,134.6],PY:[-23.4,-58.4],QA:[25.4,51.2],RE:[-21.1,55.5],RO:[45.9,25],RS:[44,21],RU:[58,60],RW:[-1.9,29.9],SA:[23.9,45.1],SB:[-9.6,160.2],SC:[-4.7,55.5],SD:[12.9,30.2],SE:[62.2,17.6],SG:[1.35,103.8],SI:[46.2,14.9],SK:[48.7,19.7],SL:[8.5,-11.8],SM:[43.9,12.5],SN:[14.5,-14.5],SO:[5.2,46.2],SR:[3.9,-56],SS:[6.9,31.3],ST:[0.2,6.6],SV:[13.8,-88.9],SX:[18,-63],SY:[34.8,39],SZ:[-26.5,31.5],TC:[21.7,-71.8],TD:[15.5,18.7],TG:[8.6,0.8],TH:[15.9,101],TJ:[38.9,71.3],TL:[-8.9,125.7],TM:[38.97,59.6],TN:[33.9,9.5],TO:[-21.2,-175.2],TR:[39,35.2],TT:[10.7,-61.2],TV:[-7.1,177.6],TW:[23.7,121],TZ:[-6.4,34.9],UA:[48.4,31.2],UG:[1.4,32.3],US:[39.8,-98.6],UY:[-32.5,-55.8],UZ:[41.4,64.6],VA:[41.9,12.45],VC:[13.3,-61.2],VE:[6.4,-66.6],VG:[18.4,-64.6],VI:[18.3,-64.8],VN:[14.1,108.3],VU:[-15.4,166.9],WF:[-13.3,-176.2],WS:[-13.8,-172.1],XK:[42.6,20.9],YE:[15.6,48.5],YT:[-12.8,45.2],ZA:[-30.6,22.9],ZM:[-13.1,27.8],ZW:[-19,29.2]};
+/* 국가별 geo 좌표 허용 반경(도 단위). 국토가 넓은 나라는 넓게 잡아
+   정확한 도시 단위 좌표는 살리고, 반경 밖(=엉터리 데이터)은 버린다. */
+const BIGR={RU:55,US:56,CA:42,CN:32,BR:30,AU:32,KZ:26,IN:24,AR:26,ID:34,GL:32,MX:24,CL:24,NO:26,FR:24,SA:24,DZ:24,LY:24,SD:24,MN:24,ZA:24,IR:24,EG:22,PE:22,CO:22};
+const R_DEFAULT=20;
+/* 국가명 표기 예외(그 외에는 Intl.DisplayNames로 자동 변환) */
+const DISPLAY={US:'AMERICA',GB:'UK',KR:'KOREA',KP:'NORTH KOREA',AE:'UAE',CD:'DR CONGO'};
+const REGION=(()=>{try{return new Intl.DisplayNames(['en'],{type:'region'})}catch{return null}})();
+
+/* 음악 외 콘텐츠 차단 필터 — 태그와 방송국 이름 양쪽에 적용 */
+const BAD=/news|talk|speech|sport|relig|scanner|weather|police|podcast|traffic|sermon|quran|preach/i;
+const IS_IOS=/iPad|iPhone|iPod/.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
+const POOL_TARGET=2000,POOL_MAX=4000;
+const CACHE_KEY='rr_pool_v62',CACHE_TTL=24*60*60*1000;  /* 채널 풀 캐시(24시간, 백그라운드 갱신 병행) */
+const BAD_KEY='rr_bad_v62';                             /* 죽은 스트림 블랙리스트(세션 간 유지) */
+const FAV_KEY='rr_favs_v50';                            /* 즐겨찾기 */
+const LAST_KEY='rr_last_v60';                           /* 마지막 청취 상태 */
+
+/* ───────────────────────── 1. 상태 ───────────────────────── */
+
+const $=id=>document.getElementById(id),canvas=$('globe'),ctx=canvas.getContext('2d');
+/* 지구본 렌더링 상태 */
+let width=0,height=0,projection=null,path=null,graticule=null,land=null,rotation=[-15,-10,0],targetRotation=null,dots=[];
+/* 채널·재생 상태 */
+let pool=new Map(),current=null,started=false,switching=false,autoRetries=0;
+let bad=new Map(),played=new Set(),recentCountries=[],lastClickBase=API[0];
+/* 사용자 데이터 */
+let favs=[],drawer=false,resumeStation=null,savedVolume=1;
+/* 와치독(재생 중 감시) 상태 */
+let userPaused=false,reconnects=0,stallStrikes=0,lastMediaTime=-1,watchTimer=null,reconnecting=false,waitTimer=null,waitT=0;
+/* 디버그 오버레이 */
+const DLOG=[];let debugOpen=false;
+function dlog(m){
+  const t=new Date(),ts=[t.getHours(),t.getMinutes(),t.getSeconds()].map(x=>String(x).padStart(2,'0')).join(':');
+  DLOG.push(ts+' '+m);
+  if(DLOG.length>80)DLOG.shift();
+  if(debugOpen)renderDebug();
+}
+
+/* ───────────────────────── 2. 유틸 ───────────────────────── */
+
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+/* HTTPS 직결 스트림만 통과. 플레이리스트(.pls/.m3u/.m3u8 등)는
+   <audio>가 직접 재생 못 하므로 배제 */
+function stream(st){const u=String(st.url_resolved||st.url||'').trim();if(!/^https:\/\//i.test(u))return'';if(/\.(pls|asx|xspf|m3u)($|\?)/i.test(u))return'';return u}
+/* HLS(.m3u8) 여부 — v64부터 지원: Safari 계열은 네이티브, 그 외는 hls.js */
+function isHls(st){return Number(st&&st.hls)===1||/\.m3u8($|\?)/i.test(String(st&&(st.url_resolved||st.url)||''))}
+function nativeHls(){try{const a=getPlayer();return !!(a.canPlayType&&a.canPlayType('application/vnd.apple.mpegurl'))}catch{return false}}
+function hlsCapable(){return nativeHls()||('MediaSource'in window)}
+function key(st){return String(st.stationuuid||stream(st)||st.name||'').toLowerCase()}
+function isBad(st){const k=key(st),u=bad.get(k)||0;if(u>Date.now())return true;if(u)bad.delete(k);return false}
+function ccOf(st){return String(st.countrycode||'').toUpperCase().slice(0,2)}
+/* 방송국명 간소화: 괄호 블록·품질 표기 제거 → 첫 구분자 앞만 → 24자 */
+function clean(s){
+  let n=String(s||'Unnamed station')
+    .replace(/\([^)]*\)|\[[^\]]*\]/g,' ')
+    .replace(/\b(online radio|live stream|the best|official|webradio|web radio|mp3|aac|ogg|hls|streaming|stream|[0-9]{2,3}\s?k(bps|bit)?)\b/ig,' ')
+    .replace(/\s+/g,' ').trim();
+  const cut=n.split(/\s+[-–—|•·:\/]\s+/)[0].trim();
+  if(cut.length>=3)n=cut;
+  n=n.replace(/[\s\-–—|•·:,\/]+$/,'').trim();
+  if(n.length>24)n=n.slice(0,24).replace(/\s+\S*$/,'').trim()||n.slice(0,24).trim();
+  return n||'Unnamed station';
+}
+function countryName(st){
+  const cc=ccOf(st);
+  if(DISPLAY[cc])return DISPLAY[cc];
+  if(REGION&&cc){try{const n=REGION.of(cc);if(n&&n!==cc)return n.toUpperCase()}catch{}}
+  return String(st.country||cc||'WORLD').toUpperCase();
+}
+function genreOf(st){
+  const t=String(st.tags||'').split(',').map(x=>x.trim()).filter(x=>x&&x.length<18&&!BAD.test(x));
+  return t.length?t[0].toUpperCase():'';
+}
+/* localStorage 저장용 축약 객체(원본 필드명 유지 → 호환성) */
+function slim(st){return{stationuuid:st.stationuuid,name:st.name,country:st.country,countrycode:st.countrycode,url_resolved:stream(st),geo_lat:st.geo_lat,geo_long:st.geo_long,codec:st.codec,bitrate:st.bitrate,hls:st.hls,tags:String(st.tags||'').slice(0,60),favicon:/^https:/.test(String(st.favicon||''))?String(st.favicon).slice(0,200):'',lastcheckok:1,ssl_error:0}}
+
+/* ───────────────────────── 3. 좌표 ───────────────────────── */
+
+/* 대권거리(도 단위) — geo 좌표가 자기 나라 안에 있는지 검증용 */
+function gcDeg(a,b){
+  const r=Math.PI/180,f1=a[0]*r,f2=b[0]*r,dl=(b[1]-a[1])*r;
+  const x=Math.sin(f1)*Math.sin(f2)+Math.cos(f1)*Math.cos(f2)*Math.cos(dl);
+  return Math.acos(Math.min(1,Math.max(-1,x)))/r;
+}
+/* 지구본에 실제로 찍을 좌표.
+   ① geo가 자기 나라 허용 반경 안에 있으면 그대로(도시 정밀도 유지)
+   ② 아니면 국가 중심점 + 결정적 지터(한 점에 겹치지 않게)
+   → 표시 위치가 발표 국가와 어긋나는 일이 원천적으로 없다 */
+function displayPoint(st){
+  const cc=ccOf(st),cen=CC[cc];
+  const la=Number(st.geo_lat),lo=Number(st.geo_long);
+  const geoOK=Number.isFinite(la)&&Number.isFinite(lo)&&Math.abs(la)<=90&&Math.abs(lo)<=180&&!(la===0&&lo===0);
+  if(cen){
+    if(geoOK&&gcDeg([la,lo],cen)<=(BIGR[cc]||R_DEFAULT))return[la,lo];
+    let h=0;const k=key(st);for(let i=0;i<k.length;i++)h=(h*31+k.charCodeAt(i))>>>0;
+    return[cen[0]+((h%100)/100-.5)*2.2,cen[1]+(((h>>7)%100)/100-.5)*2.2];
+  }
+  return geoOK?[la,lo]:null;
+}
+/* 재생 후보 자격 검사(불량 데이터 방어선) */
+function looks(st){
+  if(!stream(st)||isBad(st))return false;
+  if(isHls(st)&&!hlsCapable())return false;   /* HLS: 네이티브도 MSE도 없으면 배제 */
+  if(st.lastcheckok!==undefined&&Number(st.lastcheckok)===0)return false;
+  if(Number(st.ssl_error)===1)return false;
+  if(BAD.test(String(st.tags||''))||BAD.test(String(st.name||'')))return false;
+  if(st.bitrate&&Number(st.bitrate)>0&&Number(st.bitrate)<48)return false;
+  const c=String(st.codec||'').toLowerCase();
+  if(IS_IOS&&/(ogg|opus|vorbis|flac)/.test(c))return false;            /* iOS 미지원 코덱 */
+  if(!displayPoint(st))return false;
+  return true;
+}
+
+/* ─────────────────── 4. Radio Browser API / 채널 풀 ─────────────────── */
+
+function updatePoolUI(){$('poolCount').textContent=pool.size.toLocaleString('en-US')}
+function addToPool(arr){
+  let added=0;
+  for(const st of arr){
+    if(pool.size>=POOL_MAX)break;
+    if(!looks(st))continue;
+    const k=key(st);
+    if(pool.has(k))continue;
+    pool.set(k,slim(st));added++;
+    if(dots.length<250){const p=displayPoint(st);if(p)dots.push({lat:p[0],lon:p[1]})}
+  }
+  if(added)updatePoolUI();
+  return added;
+}
+/* ── 미러 건강 감시 & 자동 갱신 ──
+   공식 문서 경고: "서버 이름은 바뀔 수 있으니 특정 서버 직접 링크 금지."
+   → ① 4초 핑(/json/stats)으로 미러별 생존·지연을 기록하고
+     ② 살아 있는 미러에서 /json/servers로 현재 서버 목록을 받아
+        localStorage에 보관(7일) — 하드코딩 목록이 썩어도 자가 치유.
+     ③ 모든 요청은 건강한(빠른) 미러부터 순서대로 시도. */
+const MIRROR_KEY='rr_mirrors_v63';
+const mirrorHealth=new Map();   /* base → {ok, ms, t} */
+let DYN_MIRRORS=[];
+function mirrors(){
+  const set=new Set([...DYN_MIRRORS,...API]);
+  return[...set];
+}
+function loadMirrors(){
+  try{
+    const d=JSON.parse(localStorage.getItem(MIRROR_KEY)||'null');
+    if(d&&Array.isArray(d.m)&&Date.now()-d.t<7*24*60*60*1000)
+      DYN_MIRRORS=d.m.filter(u=>/^https:\/\/[a-z0-9.-]+\.api\.radio-browser\.info$/.test(u));
+  }catch{}
+}
+async function pingMirror(base){
+  const t0=Date.now();
+  try{
+    const ctrl=new AbortController();const t=setTimeout(()=>ctrl.abort(),4000);
+    const r=await fetch(base+'/json/stats',{signal:ctrl.signal});
+    clearTimeout(t);
+    if(!r.ok)throw 0;
+    await r.json();
+    mirrorHealth.set(base,{ok:true,ms:Date.now()-t0,t:Date.now()});
+    return true;
+  }catch{mirrorHealth.set(base,{ok:false,ms:9999,t:Date.now()});return false}
+}
+function healthSummary(){
+  return mirrors().map(b=>{
+    const h=mirrorHealth.get(b),n=b.replace('https://','').split('.')[0];
+    return h?(h.ok?n+'✓'+h.ms+'ms':n+'✗'):n+'·';
+  }).join('  ');
+}
+async function pingMirrors(){
+  await Promise.all(mirrors().map(pingMirror));
+  dlog('mirrors: '+healthSummary());
+}
+/* 살아 있는 미러에서 현재 서버 목록을 받아 갱신.
+   보안: *.api.radio-browser.info 도메인만 수용(저장값 오염 방지) */
+async function discoverMirrors(){
+  try{
+    const arr=await fetchJson('/json/servers');
+    const names=[...new Set((arr||[]).map(s=>String(s&&s.name||'').trim().toLowerCase())
+      .filter(n=>/^[a-z0-9-]+\.api\.radio-browser\.info$/.test(n)))];
+    if(names.length){
+      DYN_MIRRORS=names.map(n=>'https://'+n);
+      try{localStorage.setItem(MIRROR_KEY,JSON.stringify({t:Date.now(),m:DYN_MIRRORS}))}catch{}
+      dlog('discovered '+names.length+' mirrors');
+      pingMirrors();
+    }
+  }catch{}
+}
+/* 건강한(빠른) 미러 → 미확인 → 불량 순으로 정렬, 'all'은 최후 폴백 */
+function orderedMirrors(){
+  const list=mirrors(),h=b=>mirrorHealth.get(b);
+  const good=list.filter(b=>h(b)&&h(b).ok).sort((a,b)=>h(a).ms-h(b).ms);
+  const unknown=shuffle(list.filter(b=>!h(b)));
+  const down=list.filter(b=>h(b)&&!h(b).ok);
+  return[...good,...unknown,...down];
+}
+/* 미러 순차 시도 + 'all' 최후 폴백, 요청당 8초 타임아웃 */
+async function fetchJson(pathq){
+  const bases=[...orderedMirrors().slice(0,4),API_LAST];
+  let err;
+  for(const base of bases){
+    try{
+      const ctrl=new AbortController();const t=setTimeout(()=>ctrl.abort(),8000);
+      const r=await fetch(base+pathq,{headers:{Accept:'application/json'},signal:ctrl.signal});
+      clearTimeout(t);
+      if(!r.ok)throw Error(r.status);
+      lastClickBase=base;
+      if(base!==API_LAST)mirrorHealth.set(base,{ok:true,ms:(mirrorHealth.get(base)||{}).ms||500,t:Date.now()});
+      return await r.json();
+    }catch(e){
+      err=e;
+      if(base!==API_LAST)mirrorHealth.set(base,{ok:false,ms:9999,t:Date.now()});
+      dlog('mirror fail '+base.replace('https://','').split('.')[0]+' '+((e&&(e.name==='AbortError'?'timeout':(e.message||e.name)))||''));
+    }
+  }
+  dlog('all mirrors failed');
+  throw err||Error('all mirrors failed');
+}
+/* 서버 쪽 필터를 최대한 활용: hidebroken + HTTPS */
+function searchQuery(extra){
+  const q=new URLSearchParams({hidebroken:'true',is_https:'true',limit:'150'});
+  for(const[k,v]of Object.entries(extra))q.set(k,v);
+  return'/json/stations/search?'+q;
+}
+function savePoolCache(){
+  try{localStorage.setItem(CACHE_KEY,JSON.stringify({t:Date.now(),s:[...pool.values()].slice(0,3500)}))}catch{}
+}
+/* 죽은 스트림 블랙리스트 영속화: 오늘 죽어 있던 채널을 내일 또
+   시도하지 않는다. 만료 12시간, 최대 400건으로 용량 관리 */
+function saveBad(){
+  try{
+    const now=Date.now();
+    const arr=[...bad.entries()].filter(([,u])=>u>now).slice(-400);
+    localStorage.setItem(BAD_KEY,JSON.stringify(arr));
+  }catch{}
+}
+function loadBad(){
+  try{
+    const arr=JSON.parse(localStorage.getItem(BAD_KEY)||'[]');
+    const now=Date.now();
+    for(const[k,u]of arr)if(u>now)bad.set(k,u);
+  }catch{}
+}
+function loadPoolCache(){
+  try{
+    const raw=localStorage.getItem(CACHE_KEY);if(!raw)return false;
+    const d=JSON.parse(raw);
+    if(!d||!Array.isArray(d.s)||Date.now()-d.t>CACHE_TTL)return false;
+    addToPool(d.s);
+    return pool.size>=600;
+  }catch{return false}
+}
+let building=false;
+async function buildPool(){
+  if(building)return;building=true;
+  try{
+    const tags=shuffle([...MUSIC_TAGS]);
+    /* 1단계: 전체 DB 무작위 스윕("List of all radio stations"와 동일한
+       대상). 요청당 400건씩 크게 받아 호출 수는 줄이고 수확은 늘린다 */
+    for(let i=0;i<6;i++){
+      if(pool.size>=POOL_TARGET)break;
+      try{
+        const arr=await fetchJson(searchQuery({order:'random',limit:'400',offset:String(Math.floor(Math.random()*20000))}));
+        addToPool(arr);
+      }catch{}
+      await sleep(150);
+    }
+    /* 신뢰도 앵커: 전 세계 투표 상위 + 최근 인기 방송국(살아 있을 확률이
+       가장 높은 집단)을 섞어 풀의 '재생 성공률' 바닥을 끌어올린다 */
+    for(const order of['votes','clicktrend']){
+      try{
+        const arr=await fetchJson(searchQuery({order,reverse:'true',limit:'400'}));
+        addToPool(arr);
+      }catch{}
+      await sleep(150);
+    }
+    /* 2단계: 장르별 검색으로 음악 밀도 보강 — 목표치까지 */
+    for(const tag of tags){
+      if(pool.size>=POOL_TARGET)break;
+      try{
+        const arr=await fetchJson(searchQuery({tag,order:'votes',reverse:'true',limit:'200',offset:String(Math.floor(Math.random()*80))}));
+        addToPool(arr);
+      }catch{}
+      await sleep(150);
+    }
+    savePoolCache();
+  }finally{building=false;updatePoolUI()}
+}
+/* 주기적 보충: 전체 DB 스윕과 장르 쿼리를 번갈아 소량 추가 */
+let topUpFlip=false;
+async function topUp(){
+  if(building||pool.size>=POOL_MAX)return;
+  topUpFlip=!topUpFlip;
+  const q=topUpFlip
+    ?{order:'random',limit:'120',offset:String(Math.floor(Math.random()*20000))}
+    :{tag:MUSIC_TAGS[Math.floor(Math.random()*MUSIC_TAGS.length)],order:'random',limit:'120'};
+  try{
+    const arr=await fetchJson(searchQuery(q));
+    addToPool(arr);savePoolCache();
+  }catch{}
+}
+/* 재생 시 클릭 카운트 보고 — Radio Browser 공식 권장 사항 */
+function reportClick(st){
+  const u=String(st.stationuuid||'');
+  if(!u||u.startsWith('seed-'))return;
+  try{fetch(lastClickBase+'/json/url/'+encodeURIComponent(u)).catch(()=>{})}catch{}
+}
+
+/* ───────────────────────── 5. 오디오 엔진 ─────────────────────────
+   핵심 설계: 앱 전체가 단 하나의 <audio> 요소를 재사용한다.
+   iOS 사파리는 사용자 제스처 호출 스택 안의 play()만 허용하므로,
+   첫 탭에서 무음 WAV로 요소를 '잠금 해제'해 두면 이후 await를
+   건너뛰며 후보를 갈아타도 재생이 차단되지 않는다. */
+
+const SILENT_WAV='data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAQB8AAIA+AAACABAAZGF0YQAAAAA=';
+let player=null,unlocked=false,playToken=0;
+function getPlayer(){
+  if(player)return player;
+  player=new Audio();
+  player.preload='auto';
+  player.playsInline=true;
+  player.setAttribute('playsinline','');
+  try{player.volume=savedVolume}catch{}
+  return player;
+}
+function unlock(){
+  if(unlocked)return;
+  const a=getPlayer();
+  try{
+    a.src=SILENT_WAV;
+    const p=a.play();
+    if(p&&p.catch)p.catch(()=>{});
+    unlocked=true;
+  }catch{}
+}
+/* ── HLS 엔진 ──
+   정석 패턴(hls.js 공식 문서): Safari 계열은 <audio>에 .m3u8을 직접
+   꽂는 네이티브 재생(CORS 불필요·저전력), 그 외 MSE 브라우저는
+   hls.js를 '첫 HLS 채널을 만날 때' CDN에서 지연 로드해 사용.
+   hls.js 경로는 스트림에 CORS 헤더가 필요하므로 실패 시 일반
+   폴백(다음 후보)으로 흘려보낸다. */
+let hlsLib=null,hlsLoading=null,hlsInstance=null;
+function loadHlsLib(){
+  if(hlsLib)return Promise.resolve(hlsLib);
+  if(window.Hls){hlsLib=window.Hls;return Promise.resolve(hlsLib)}
+  if(hlsLoading)return hlsLoading;
+  hlsLoading=new Promise(res=>{
+    const s=document.createElement('script');
+    s.src='https://cdn.jsdelivr.net/npm/hls.js@1';
+    s.onload=()=>{hlsLib=window.Hls||null;res(hlsLib)};
+    s.onerror=()=>res(null);
+    document.head.appendChild(s);
+  });
+  return hlsLoading;
+}
+function destroyHls(){if(hlsInstance){try{hlsInstance.destroy()}catch{}hlsInstance=null}}
+
+/* 한 방송국 재생 시도. 성공하면 station, 실패하면 null.
+   ★ v58 치명 버그 수정: 사파리는 미디어 요소가 에러 상태에 빠지면
+     load()로 초기화하기 전까지 죽은 채로 남는다. 재사용 요소에
+     src만 바꾸면 첫 실패 후 모든 후보가 즉사 → src 교체 직후
+     반드시 load()를 호출한다. */
+function playOne(st,ms=6000,bust=false){
+  return new Promise(resolve=>{
+    /* bust=true: 재접속용 일회용 파라미터로 브라우저/프록시의 낡은
+       연결을 우회해 라이브 최신 지점에 새로 붙는다(순단 후 과거
+       오디오를 이어 트는 문제 방지). 1차 재접속은 원본 URL 유지 —
+       파라미터를 거부하는 서버 대비 */
+    const a=getPlayer();
+    const token=++playToken;               /* 뒤늦게 도착하는 낡은 콜백 무효화 */
+    try{a.onplaying=a.oncanplay=a.onerror=null;a.pause()}catch{}
+    destroyHls();
+    let done=false;
+    const timer=setTimeout(()=>fail(true,'timeout'),ms);
+    const ok=()=>{
+      if(done||token!==playToken)return;
+      done=true;clearTimeout(timer);resolve(st);
+    };
+    const fail=(b,why)=>{
+      if(done||token!==playToken)return;
+      done=true;clearTimeout(timer);
+      if(b){
+        /* 미디어 에러(스트림 자체 불량)=12시간, 타임아웃(일시적일 수 있음)=35분 차단.
+           죽은 채널은 풀에서도 제거해 채널 수가 '재생 가능한 수'에 수렴하게 한다 */
+        const ttl=why==='media'?12*60*60*1000:35*60*1000;
+        bad.set(key(st),Date.now()+ttl);
+        pool.delete(key(st));
+        updatePoolUI();
+        saveBad();
+      }
+      dlog('fail['+(why||'?')+'] '+clean(st.name));
+      resolve(null);
+    };
+    a.onplaying=ok;
+    /* canplay는 '재생 가능할 수도 있다'는 신호일 뿐이므로 즉시 성공
+       처리하지 않고 1.6초 유예를 둔다. 그 사이 playing이 오면 성공,
+       유예가 끝났는데 요소가 멈춰 있지 않으면 성공으로 간주.
+       (그래도 새는 오탐은 와치독이 10초 내에 잡아 재접속한다) */
+    a.oncanplay=()=>{
+      if(done||token!==playToken)return;
+      setTimeout(()=>{
+        if(done||token!==playToken)return;
+        if(!a.paused)ok();else fail(true,'nosound');
+      },1600);
+    };
+    a.onerror=()=>fail(true,'media');
+    const startPlay=()=>{
+      try{
+        const p=a.play();
+        /* 자동재생 정책(NotAllowedError)·자체 중단(AbortError)은
+           방송국 잘못이 아니므로 블랙리스트에 넣지 않는다 */
+        if(p&&p.catch)p.catch(e=>{const n=e&&e.name;fail(n!=='NotAllowedError'&&n!=='AbortError',n||'reject')});
+      }catch(e){fail(true,(e&&e.name)||'throw')}
+    };
+    const srcUrl=stream(st)+(bust?((stream(st).includes('?')?'&':'?')+'_rr='+Date.now()):'');
+    if(isHls(st)&&!nativeHls()){
+      /* hls.js 경로 (Chrome/Firefox 등) — CORS 필요, 실패 시 일반 폴백 */
+      loadHlsLib().then(H=>{
+        if(done||token!==playToken)return;
+        if(!H||!H.isSupported()){fail(true,'no-hls');return}
+        try{
+          hlsInstance=new H({enableWorker:false});
+          hlsInstance.on(H.Events.ERROR,(ev,data)=>{
+            if(data&&data.fatal)fail(true,'hls-'+(data.type||'fatal'));
+          });
+          hlsInstance.loadSource(srcUrl);
+          hlsInstance.attachMedia(a);
+          startPlay();
+        }catch(e){fail(true,'hls-init')}
+      });
+    }else{
+      /* 일반 스트림 또는 네이티브 HLS(Safari/iOS) — 동일 경로 */
+      a.src=srcUrl;
+      try{a.load()}catch{}                 /* ★ 에러 상태 리셋 — 절대 제거 금지 */
+      startPlay();
+    }
+  })
+}
+/* 완전 정지(전 후보 실패·슬립 타이머 종료 시 데이터 낭비 방지) */
+function hardStop(){
+  userPaused=true;stopWatchdog();destroyHls();
+  const a=player;if(!a)return;
+  try{a.onplaying=a.oncanplay=a.onerror=a.onended=a.onwaiting=null;a.pause();a.removeAttribute('src');a.load()}catch{}
+}
+/* 이번 탭의 재생 후보 목록: 풀에서 최근 국가 회피 + 셔플,
+   마지막 안전망으로 시드(FIP 편중 방지를 위해 프랑스 시드 제외) */
+function candidates(){
+  /* 단계적 완화: 정상 필터로 후보가 비면 played 해제 → 국가 제한 해제
+     순으로 풀어, 장시간 사용·API 장애가 겹쳐도 후보가 고갈되지 않는다 */
+  const base=[...pool.values()].filter(st=>looks(st));
+  let raw=base.filter(st=>!played.has(key(st)));
+  const fresh=raw.filter(st=>!recentCountries.includes(ccOf(st)));
+  if(fresh.length>=8)raw=fresh;
+  if(!raw.length)raw=base;                       /* 완화 ①: played 해제 */
+  raw=shuffle(raw).slice(0,12);
+  /* 네이티브 HLS가 없는 환경(Chrome류)에서는 CORS 실패 가능성이 있는
+     HLS 채널을 뒤로 미뤄 헛탭을 줄인다 */
+  if(!nativeHls())raw.sort((a,b)=>(isHls(a)?1:0)-(isHls(b)?1:0));
+  /* 비상 안전망 2단: ① 최근 실제 재생에 성공한 채널(동적 시드)
+     ② 정적 시드. 각 단계도 국가 필터로 비면 필터를 풀어 반드시 채운다 */
+  let dyn=shuffle(proven.filter(st=>looks(st)&&!recentCountries.includes(ccOf(st))));
+  if(!dyn.length)dyn=shuffle(proven.filter(st=>looks(st)));          /* 완화 ② */
+  let emergency=shuffle(SEEDS.filter(st=>!isBad(st)&&st.countrycode!=='FR'&&!recentCountries.includes(ccOf(st))));
+  if(!emergency.length)emergency=shuffle(SEEDS.filter(st=>!isBad(st))); /* 완화 ③: 국가·FIP 제한 해제 */
+  return[...raw,...dyn,...emergency].slice(0,14);
+}
+function setBusy(on){
+  $('globeArea').classList.toggle('traveling',on);
+  $('info').classList.toggle('travelingState',on);
+  if(on){
+    $('info').classList.remove('paused');
+    $('clock').textContent='';
+    $('country').textContent='TRAVELLING';
+    $('station').textContent='finding a station…';
+    $('genre').textContent='';
+  }
+}
+/* ── 현지 시각 (경도 기반 태양시 근사) ──
+   나라마다 시간대 테이블을 내장하는 대신 경도/15°로 근사한다.
+   "지구 반대편의 새벽을 듣고 있다"는 감각용이므로 ±1시간 오차 허용 */
+let currentLon=null;
+function localTimeStr(lon){
+  const off=Math.round(lon/15);
+  const d=new Date(Date.now()+off*3600e3);
+  let h=d.getUTCHours();const m=d.getUTCMinutes();
+  const ap=h>=12?'PM':'AM';h=h%12||12;
+  return h+':'+String(m).padStart(2,'0')+' '+ap;
+}
+function renderClock(){
+  const el=$('clock');
+  el.textContent='';
+  if(!current||currentLon==null)return;
+  const off=Math.round(currentLon/15);
+  const d=new Date(Date.now()+off*3600e3);
+  let h=d.getUTCHours();const m=d.getUTCMinutes();
+  const ap=h>=12?'PM':'AM';h=h%12||12;
+  const digits=String(h).padStart(2,'0')+':'+String(m).padStart(2,'0');
+  for(const ch of digits){
+    const c=document.createElement('span');
+    if(ch===':'){c.className='fcol';c.textContent=':'}
+    else{c.className='fd';c.textContent=ch}
+    el.appendChild(c);
+  }
+  const a=document.createElement('span');
+  a.className='fap';a.textContent=ap;
+  el.appendChild(a);
+}
+/* 30초마다 현지 시각 갱신(재생 중·화면 표시 중에만) */
+setInterval(()=>{
+  if(current&&currentLon!=null&&!document.hidden)renderClock();
+},10000);
+function setMSState(s){try{if('mediaSession'in navigator)navigator.mediaSession.playbackState=s}catch{}}
+function setNowPlaying(st){
+  $('info').classList.remove('paused');
+  const p=displayPoint(st);
+  currentLon=p?p[1]:null;
+  $('country').textContent=countryName(st);
+  renderClock();
+  $('station').textContent=clean(st.name);
+  $('genre').textContent=genreOf(st);
+  if(p)targetRotation=[-p[1],-p[0],0];     /* 지구본을 그 나라로 회전 */
+  setMSState('playing');
+  /* 잠금화면·제어센터 연동(Media Session) */
+  if('mediaSession'in navigator){
+    try{
+      const art=/^https:/.test(String(st.favicon||''))?[{src:st.favicon,sizes:'192x192',type:'image/png'}]:[];
+      navigator.mediaSession.metadata=new MediaMetadata({title:clean(st.name),artist:countryName(st),album:'Random Radio',artwork:art});
+      navigator.mediaSession.setActionHandler('play',()=>{userPaused=false;try{player&&player.play()}catch{};$('info').classList.remove('paused');setMSState('playing')});
+      navigator.mediaSession.setActionHandler('pause',()=>{userPaused=true;try{player&&player.pause()}catch{};$('info').classList.add('paused');setMSState('paused')});
+      navigator.mediaSession.setActionHandler('nexttrack',()=>{autoRetries=0;playNext()});
+    }catch{}
+  }
+  updateFav();
+}
+/* 랜덤 여행 본체: 후보를 순서대로 시도, 전부 실패 시 자동 2회 재시도 */
+async function playNext(){
+  if(switching)return;switching=true;started=true;userPaused=false;setBusy(true);
+  stopWatchdog();
+  let cand=candidates();
+  /* 마지막 청취 방송국 복원: 첫 탭 한정으로 최우선 후보에 배치 */
+  if(resumeStation){cand.unshift(resumeStation);resumeStation=null}
+  let ok=null;
+  for(const st of cand){
+    ok=await playOne(st,String(st.stationuuid||'').startsWith('seed-')?6500:6000);
+    if(ok)break;
+  }
+  if(ok){
+    autoRetries=0;reconnects=0;
+    current=ok;
+    played.add(key(ok));
+    if(played.size>600)played=new Set([...played].slice(-300));
+    const cc=ccOf(ok);
+    if(cc)recentCountries=[cc,...recentCountries.filter(x=>x!==cc)].slice(0,10);
+    const p=displayPoint(ok);
+    if(p&&dots.length<250)dots.push({lat:p[0],lon:p[1]});
+    setNowPlaying(ok);
+    reportClick(ok);
+    saveLast(ok);
+    saveProven(ok);
+    dlog('play '+clean(ok.name)+' ['+ccOf(ok)+']');
+    setBusy(false);switching=false;
+    startWatchdog();
+  }else if(autoRetries<2){
+    /* 사용자를 귀찮게 하기 전에 조용히 한 번 더 여행 */
+    autoRetries++;
+    $('country').textContent='TRAVELLING';
+    $('station').textContent='searching another playable station…';
+    $('genre').textContent='';
+    switching=false;
+    setTimeout(playNext,700);
+  }else{
+    autoRetries=0;
+    hardStop();
+    $('country').textContent='NO SIGNAL';
+    $('station').textContent='Tap the globe to retry.';
+    $('genre').textContent='';
+    setBusy(false);switching=false;
+  }
+}
+
+/* ─────────────── 5.5 재생 와치독 (재생 중 안정화) ───────────────
+   인터넷 라디오는 재생 '시작'보다 재생 '중' 끊김이 더 흔하다.
+   5초 간격으로 재생 진행(currentTime)을 감시해 2회 연속 멈춰 있으면
+   끊김으로 판정 → 같은 방송국 재접속 2회 → 그래도 안 되면 다음
+   방송국으로 자동 이동. ended/error 이벤트는 즉시 복구 절차 진입.
+   사용자가 직접 멈춘 경우(userPaused)는 절대 건드리지 않는다. */
+
+function startWatchdog(){
+  stopWatchdog();
+  lastMediaTime=-1;stallStrikes=0;
+  const a=getPlayer();
+  a.onended=()=>{if(!switching){dlog('stream ended');recover('ended')}};
+  a.onerror=()=>{if(!switching&&!reconnecting){dlog('stream error');recover('error')}};
+  /* 버퍼 고갈(waiting) 조기 경보: 5초 폴링보다 빠르게 끊김을 잡는다.
+     waiting은 정상 버퍼링에서도 뜨므로 6초 단발 타이머로 걸러,
+     그 안에 재생이 진행되지 못했을 때만 복구에 들어간다 */
+  a.onwaiting=()=>{
+    if(!current||switching||userPaused||reconnecting||waitTimer)return;
+    waitT=a.currentTime||0;
+    dlog('buffering…');
+    waitTimer=setTimeout(()=>{
+      waitTimer=null;
+      if(!current||switching||userPaused||reconnecting)return;
+      if((a.currentTime||0)<=waitT+0.1)recover('waiting');
+    },6000);
+  };
+  a.onplaying=()=>{if(waitTimer){clearTimeout(waitTimer);waitTimer=null}};
+  watchTimer=setInterval(watchTick,5000);
+}
+function stopWatchdog(){
+  if(watchTimer){clearInterval(watchTimer);watchTimer=null}
+  if(waitTimer){clearTimeout(waitTimer);waitTimer=null}
+}
+function watchTick(){
+  if(!current||switching||userPaused||reconnecting||!player)return;
+  const a=player;
+  if(a.paused){
+    stallStrikes++;
+    dlog('paused unexpectedly ('+stallStrikes+'/2)');
+  }else{
+    const t=a.currentTime||0;
+    if(t===lastMediaTime){stallStrikes++;dlog('no progress ('+stallStrikes+'/2)')}
+    else stallStrikes=0;
+    lastMediaTime=t;
+  }
+  if(stallStrikes>=2){stallStrikes=0;recover('stall')}
+}
+async function recover(why){
+  if(reconnecting||switching||!current||userPaused)return;
+  reconnecting=true;
+  try{
+    /* 백그라운드 복귀·네트워크 복구는 우선 같은 src를 그대로 재개 시도
+       (가장 저렴하고, iOS가 오디오만 죽인 경우 대부분 이걸로 살아난다) */
+    if(why==='visible'||why==='online'){
+      try{
+        const p=player.play();if(p)await p;
+        dlog('resumed ('+why+')');
+        return;
+      }catch(e){
+        if(e&&e.name==='NotAllowedError'){
+          /* 정책 차단: 다음 탭이 이 방송국을 잇도록 예약하고 안내만 */
+          resumeStation=slim(current);
+          $('genre').textContent='TAP TO RESUME';
+          dlog('resume blocked → tap to resume');
+          return;
+        }
+      }
+    }
+    /* 같은 방송국 재접속 (한 사고당 최대 2회 연속, 지수 백오프):
+       1차는 즉시·원본 URL, 2차는 2초 대기 후 캐시 버스팅 URL —
+       터널·엘리베이터 같은 몇 초짜리 순단에서 2차 성공률을 높인다 */
+    while(reconnects<2){
+      reconnects++;
+      dlog('reconnect #'+reconnects+' ('+why+') '+clean(current.name));
+      $('genre').textContent='RECONNECTING…';
+      if(reconnects===2){
+        await sleep(2000);
+        if(switching||userPaused||!current)return;
+      }
+      const ok=await playOne(current,6000,reconnects===2);
+      if(ok){
+        /* 1차 실패가 남긴 블랙리스트·풀 제거를 원상 복구 —
+           살아 있음이 방금 증명됐으므로 */
+        bad.delete(key(current));
+        if(!pool.has(key(current))){pool.set(key(current),slim(current));updatePoolUI()}
+        $('genre').textContent=genreOf(current);
+        dlog('reconnected');
+        startWatchdog();
+        return;
+      }
+    }
+    /* 복구 실패 → 여행 계속 (다음 방송국) */
+    dlog('recovery failed → next station');
+    autoRetries=0;
+    reconnecting=false;   /* playNext 진입 전에 해제 */
+    playNext();
+  }finally{reconnecting=false}
+}
+/* 네트워크 전환(Wi-Fi↔LTE)·복귀 감지 */
+if(window.addEventListener){
+  window.addEventListener('online',()=>{dlog('network online');if(current&&!userPaused&&player&&player.paused)recover('online')});
+  window.addEventListener('offline',()=>dlog('network offline'));
+}
+
+/* ───────────────────────── 6. 슬립 타이머 ─────────────────────────
+   ☾ 버튼: OFF → 15분 → 30분 → 60분 → OFF 순환.
+   종료 20초 전부터 볼륨 페이드아웃(iOS는 볼륨 제어가 막혀 있어
+   페이드는 무시되고 정시에 정지만 된다), 끝나면 "Good night." */
+
+const SLEEP_STEPS=[0,15,30,60];
+let sleepIdx=0,sleepEnd=0,sleepTimer=null;
+function cycleSleep(){
+  sleepIdx=(sleepIdx+1)%SLEEP_STEPS.length;
+  const min=SLEEP_STEPS[sleepIdx];
+  if(sleepTimer){clearInterval(sleepTimer);sleepTimer=null}
+  try{if(player)player.volume=savedVolume}catch{}
+  if(!min){sleepEnd=0;updateSleepUI();return}
+  sleepEnd=Date.now()+min*60*1000;
+  sleepTimer=setInterval(sleepTick,1000);
+  updateSleepUI();
+}
+function sleepTick(){
+  const left=sleepEnd-Date.now();
+  if(left<=0){
+    clearInterval(sleepTimer);sleepTimer=null;sleepIdx=0;sleepEnd=0;
+    hardStop();
+    try{if(player)player.volume=savedVolume}catch{}
+    $('country').textContent='SLEEP';
+    $('station').textContent='Good night.';
+    $('genre').textContent='';
+    updateSleepUI();
+    return;
+  }
+  /* 마지막 20초 페이드아웃 */
+  if(left<=20000){try{if(player)player.volume=savedVolume*Math.max(0,left/20000)}catch{}}
+  updateSleepUI();
+}
+function updateSleepUI(){
+  const btn=$('sleep'),info=$('sleepInfo');
+  const on=sleepEnd>0;
+  btn.classList.toggle('sleepOn',on);
+  if(!on){info.textContent='';return}
+  const left=Math.max(0,sleepEnd-Date.now());
+  const m=Math.floor(left/60000),s=Math.floor(left%60000/1000);
+  info.textContent='sleep in '+m+':'+String(s).padStart(2,'0');
+}
+
+/* ─────────────── 7. 즐겨찾기 / 마지막 청취 상태 ─────────────── */
+
+/* 이 기기에서 최근 실제 재생에 성공한 채널 12개 — 살아 있음이 증명된
+   동적 시드. API 전면 장애 시에도 최소 동작을 보장한다 */
+const PROVEN_KEY='rr_proven_v63';let proven=[];
+function saveProven(st){
+  const s=slim(st);
+  proven=[s,...proven.filter(p=>key(p)!==key(s))].slice(0,12);
+  try{localStorage.setItem(PROVEN_KEY,JSON.stringify(proven))}catch{}
+}
+function loadProven(){try{proven=(JSON.parse(localStorage.getItem(PROVEN_KEY)||'[]')||[]).filter(st=>stream(st))}catch{proven=[]}}
+function favKey(st){return key(st)}
+function save(){try{localStorage.setItem(FAV_KEY,JSON.stringify(favs.slice(0,40).map(slim)))}catch{}}
+function load(){try{favs=(JSON.parse(localStorage.getItem(FAV_KEY)||'[]')||[]).filter(st=>stream(st))}catch{favs=[]}}
+/* 마지막 방송국·볼륨 저장 → 다음 실행의 첫 탭에서 이어 듣기 */
+function saveLast(st){
+  try{localStorage.setItem(LAST_KEY,JSON.stringify({s:slim(st),v:player?player.volume:savedVolume,t:Date.now()}))}catch{}
+}
+function loadLast(){
+  try{
+    const d=JSON.parse(localStorage.getItem(LAST_KEY)||'null');
+    if(!d||!d.s||!stream(d.s))return;
+    resumeStation=d.s;
+    if(typeof d.v==='number'&&d.v>0&&d.v<=1)savedVolume=d.v;
+    /* 첫 화면에 어젯밤 방송국을 보여 준다(재생은 탭 후) */
+    $('country').textContent=countryName(d.s);
+    $('station').textContent=clean(d.s.name);
+    $('genre').textContent='TAP TO RESUME';
+  }catch{}
+}
+function updateFav(){const on=current&&favs.some(f=>favKey(f)===favKey(current));$('fav').classList.toggle('on',!!on)}
+/* XSS 방지를 위해 textContent로만 조립. 행은 div(중첩 버튼 금지) */
+function renderFavs(){
+  const d=$('drawer'),list=$('favList');
+  d.classList.toggle('open',drawer);
+  list.textContent='';
+  if(!favs.length){const e=document.createElement('div');e.className='empty';e.textContent='No favorites yet.';list.appendChild(e);return}
+  favs.forEach((st,i)=>{
+    const row=document.createElement('div');
+    row.className='favItem';row.setAttribute('role','button');row.tabIndex=0;
+    const wrap=document.createElement('span');
+    const meta=document.createElement('span');meta.className='meta';meta.textContent=countryName(st);
+    const name=document.createElement('span');name.className='name';name.textContent=clean(st.name);
+    wrap.appendChild(meta);wrap.appendChild(name);
+    const rm=document.createElement('button');rm.className='remove';rm.textContent='×';rm.setAttribute('aria-label','Remove favorite');
+    rm.onclick=e=>{e.stopPropagation();favs.splice(i,1);save();renderFavs();updateFav()};
+    const go=()=>{
+      unlock();                            /* 제스처 안에서 잠금 해제 */
+      drawer=false;renderFavs();
+      userPaused=false;stopWatchdog();
+      playOne(st,6000).then(ok=>{if(ok){current=ok;reconnects=0;setNowPlaying(ok);reportClick(ok);saveLast(ok);saveProven(ok);dlog('play(fav) '+clean(ok.name));startWatchdog()}});
+    };
+    row.onclick=go;
+    row.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go()}};
+    row.appendChild(wrap);row.appendChild(rm);
+    list.appendChild(row);
+  });
+}
+$('fav').onclick=()=>{
+  if(current){
+    const i=favs.findIndex(f=>favKey(f)===favKey(current));
+    if(i>=0)favs.splice(i,1);else favs.unshift(slim(current));
+    save();updateFav();
+  }
+  drawer=true;renderFavs();
+};
+$('sleep').onclick=cycleSleep;
+/* 방송국명 탭 = 일시정지/재개. 화면에 버튼을 늘리지 않는 정지 수단.
+   와치독은 userPaused를 존중하므로 멈춘 방송을 되살리지 않는다 */
+$('station').onclick=()=>{
+  if(!current||switching)return;
+  const a=getPlayer();
+  if(!a.src)return;   /* NO SIGNAL 등으로 src가 비어 있으면 무의미한 재개 시도 차단 */
+  if(userPaused||a.paused){
+    userPaused=false;
+    try{const p=a.play();if(p&&p.catch)p.catch(()=>{})}catch{}
+    $('info').classList.remove('paused');
+    $('genre').textContent=genreOf(current);
+    setMSState('playing');
+    dlog('resume (name tap)');
+  }else{
+    userPaused=true;
+    try{a.pause()}catch{}
+    $('info').classList.add('paused');
+    $('genre').textContent='PAUSED';
+    setMSState('paused');
+    dlog('pause (name tap)');
+  }
+};
+$('station').onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();$('station').onclick()}};
+$('closeDrawer').onclick=()=>{drawer=false;renderFavs()};
+$('globeBtn').onclick=()=>{unlock();autoRetries=0;playNext()};
+
+/* ───────────────────────── 8. 지구본 렌더링 ─────────────────────────
+   배터리 배려: ① 30fps 상한 ② 탭이 백그라운드로 가면 렌더링을
+   완전히 멈추고(오디오는 계속) 다시 보이면 재개 */
+
+function resize(){
+  const rect=canvas.getBoundingClientRect(),dpr=Math.min(window.devicePixelRatio||1,2);
+  width=Math.max(300,Math.floor(rect.width*dpr));height=Math.max(300,Math.floor(rect.height*dpr));
+  canvas.width=width;canvas.height=height;
+  try{$('globeArea').style.setProperty('--orbitR',Math.round(rect.width*.44)+'px')}catch{}
+  if(window.d3){
+    projection=d3.geoOrthographic().translate([width/2,height/2]).scale(Math.min(width,height)*.472).clipAngle(90).precision(.25).rotate(rotation);
+    path=d3.geoPath(projection,ctx);graticule=d3.geoGraticule10();
+  }
+  draw();
+}
+function visible(lon,lat){return !window.d3||d3.geoDistance([lon,lat],[-rotation[0],-rotation[1]])<Math.PI/2}
+function project(lat,lon){return projection&&visible(lon,lat)?projection([lon,lat]):null}
+function draw(){
+  ctx.clearRect(0,0,width,height);
+  const cx=width/2,cy=height/2,r=Math.min(width,height)*.472;
+  const bg=ctx.createRadialGradient(cx-r*.42,cy-r*.46,r*.04,cx,cy,r*1.15);
+  bg.addColorStop(0,'#3a3f43');bg.addColorStop(.38,'#171c20');bg.addColorStop(1,'#020304');
+  ctx.beginPath();ctx.arc(cx,cy,r,0,Math.PI*2);ctx.fillStyle=bg;ctx.fill();
+  ctx.save();ctx.beginPath();ctx.arc(cx,cy,r,0,Math.PI*2);ctx.clip();
+  if(projection&&path){
+    projection.rotate(rotation);
+    ctx.beginPath();path({type:'Sphere'});ctx.strokeStyle='rgba(255,255,255,.15)';ctx.lineWidth=Math.max(1,width/520);ctx.stroke();
+    ctx.beginPath();path(graticule);ctx.strokeStyle='rgba(255,255,255,.105)';ctx.lineWidth=Math.max(.55,width/900);ctx.stroke();
+    if(land){ctx.beginPath();path(land);ctx.fillStyle='#272c30';ctx.fill();ctx.strokeStyle='rgba(255,255,255,.17)';ctx.lineWidth=Math.max(.5,width/980);ctx.stroke()}
+    for(const g of dots){const p=project(g.lat,g.lon);if(!p)continue;ctx.beginPath();ctx.arc(p[0],p[1],Math.max(.9,width/440),0,Math.PI*2);ctx.fillStyle='rgba(255,45,62,.42)';ctx.fill()}
+    if(current){
+      const pt=displayPoint(current),p=pt&&project(pt[0],pt[1]);
+      if(p){
+        const pulse=(8+Math.sin(Date.now()/230)*2)*(width/430);
+        ctx.beginPath();ctx.arc(p[0],p[1],pulse*1.6,0,Math.PI*2);ctx.strokeStyle='rgba(90,255,170,.9)';ctx.lineWidth=Math.max(1,width/520);ctx.stroke();
+        ctx.beginPath();ctx.arc(p[0],p[1],pulse*.7,0,Math.PI*2);ctx.fillStyle='#25ff86';ctx.fill();
+      }
+    }
+  }
+  ctx.restore();
+  const rim=ctx.createRadialGradient(cx,cy,r*.78,cx,cy,r*1.08);
+  rim.addColorStop(0,'rgba(0,0,0,0)');rim.addColorStop(.66,'rgba(0,0,0,0)');rim.addColorStop(1,'rgba(225,25,45,.46)');
+  ctx.beginPath();ctx.arc(cx,cy,r,0,Math.PI*2);ctx.fillStyle=rim;ctx.fill();
+  ctx.beginPath();ctx.arc(cx,cy,r,0,Math.PI*2);ctx.strokeStyle='rgba(255,255,255,.24)';ctx.lineWidth=Math.max(1,width/480);ctx.stroke();
+}
+function shortDelta(a,b){let d=b-a;while(d>180)d-=360;while(d<-180)d+=360;return d}
+let rafId=null,lastFrame=0;
+function loop(ts){
+  rafId=requestAnimationFrame(loop);
+  if(ts-lastFrame<33)return;               /* 30fps 상한 */
+  lastFrame=ts;
+  if(targetRotation){
+    rotation[0]+=shortDelta(rotation[0],targetRotation[0])*.09;
+    rotation[1]+=(targetRotation[1]-rotation[1])*.09;
+    if(Math.abs(shortDelta(rotation[0],targetRotation[0]))<.08&&Math.abs(rotation[1]-targetRotation[1])<.08)targetRotation=null;
+  }else rotation[0]-=started?.032:.055;
+  draw();
+}
+function startLoop(){if(!rafId){lastFrame=0;rafId=requestAnimationFrame(loop)}}
+function stopLoop(){if(rafId){cancelAnimationFrame(rafId);rafId=null}}
+document.addEventListener('visibilitychange',()=>{
+  if(document.hidden){stopLoop();return}
+  startLoop();
+  /* 복귀 점검: 재생 중이었는데 오디오가 죽어 있으면 복구 */
+  if(current&&!userPaused&&player&&player.paused&&!switching)recover('visible');
+});
+
+/* ─────────────── 8.5 디버그 오버레이 (로고 5회 탭) ───────────────
+   실기기에서 "안 돼요"를 "무엇이 왜 실패했는지"로 바꾸기 위한 창.
+   풀 상태·현재 스트림·오디오 상태·최근 이벤트 로그를 보여준다. */
+
+function renderDebug(){
+  const a=player;
+  const head=[
+    'v70  unlocked='+unlocked+'  pool='+pool.size+'  played='+played.size+'  blacklist='+bad.size,
+    'hls: native='+(nativeHls()?'yes':'no')+'  lib='+(hlsLib?'loaded':(window.Hls?'present':'-')),
+    'health: '+healthSummary(),
+    'mirror='+String(lastClickBase).replace('https://','')+'  sleep='+(sleepEnd?Math.round((sleepEnd-Date.now())/1000)+'s':'off')+'  reconnects='+reconnects,
+    current?('now  : '+clean(current.name)+' ['+ccOf(current)+'] '+String(current.codec||'?')+' '+(current.bitrate||'?')+'k'):'now  : —',
+    current?('url  : '+stream(current)):'',
+    a?('audio: paused='+a.paused+'  t='+((a.currentTime||0).toFixed(1))+'s  vol='+(typeof a.volume==='number'?a.volume.toFixed(2):'?')):'audio: —'
+  ].filter(Boolean).join('\n');
+  $('debugBody').textContent=head+'\n────────────────────\n'+DLOG.slice().reverse().join('\n');
+}
+let brandTaps=0,brandTimer=null;
+$('brand').onclick=()=>{
+  brandTaps++;
+  clearTimeout(brandTimer);
+  brandTimer=setTimeout(()=>{brandTaps=0},3000);
+  if(brandTaps>=5){
+    brandTaps=0;debugOpen=true;
+    $('debug').classList.add('open');
+    renderDebug();
+  }
+};
+$('closeDebug').onclick=()=>{debugOpen=false;$('debug').classList.remove('open')};
+setInterval(()=>{if(debugOpen)renderDebug()},2000);
+async function loadWorld(){
+  if(!window.d3||!window.topojson)return;
+  for(const u of WORLD_URLS){
+    try{const data=await d3.json(u);land=topojson.feature(data,data.objects.land);draw();return}catch{}
+  }
+}
+/* d3/topojson이 jsdelivr에서 실패했다면 unpkg에서 재시도 */
+function ensureLibs(){
+  const need=[];
+  if(!window.d3)need.push('https://unpkg.com/d3@7/dist/d3.min.js');
+  if(!window.topojson)need.push('https://unpkg.com/topojson-client@3/dist/topojson-client.min.js');
+  if(!need.length)return;
+  let left=need.length;
+  for(const src of need){
+    const s=document.createElement('script');
+    s.src=src;
+    s.onload=s.onerror=()=>{if(--left===0){resize();loadWorld().then(resize)}};
+    document.head.appendChild(s);
+  }
+}
+
+/* ───────────────────────── 9. 부팅 ───────────────────────── */
+
+window.addEventListener('resize',resize);
+load();          /* 즐겨찾기 */
+loadProven();    /* 검증된 채널(동적 시드) */
+loadMirrors();   /* 저장된 미러 목록(7일) */
+loadBad();       /* 죽은 스트림 블랙리스트(세션 간 유지) */
+loadLast();      /* 마지막 청취 상태(방송국·볼륨) */
+resize();startLoop();loadWorld().then(resize);
+ensureLibs();
+addToPool(SEEDS);   /* 시드를 풀에 직접 투입 — API·캐시가 없어도 카운터가 0이 되지 않는다 */
+loadPoolCache(); /* 캐시가 있으면 즉시 시작 */
+updatePoolUI();
+buildPool();     /* 1,200개 목표로 채움(캐시와 중복 제거) */
+setInterval(topUp,12000);
+pingMirrors().then(discoverMirrors);          /* 미러 건강 점검 → 서버 목록 자동 갱신 */
+setInterval(pingMirrors,5*60*1000);           /* 5분마다 재점검 */
+})();
+</script>
+</body>
+</html>
