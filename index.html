@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://de1.api.radio-browser.info" crossorigin />
 <link rel="preconnect" href="https://nl1.api.radio-browser.info" crossorigin />
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
-<title>Random Radio v70</title>
+<title>Random Radio v78</title>
 <style>
 :root{--bg:#050505;--text:#f5f0ea;--muted:#938c84;--red:#e1192d;--green:#36ff8b}
 *{box-sizing:border-box}html,body{height:100%;margin:0}
@@ -24,42 +24,45 @@ body:before{content:'';position:fixed;inset:0;background:radial-gradient(circle 
 .shell{position:relative;width:min(430px,100%);min-height:min(850px,calc(100dvh - 24px));border:1px solid rgba(255,255,255,.09);border-radius:38px;background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.022));box-shadow:0 36px 100px rgba(0,0,0,.68),inset 0 1px 0 rgba(255,255,255,.08);display:flex;flex-direction:column;align-items:center;padding:32px 20px 22px;overflow:hidden;backdrop-filter:blur(16px)}
 header{text-align:center;z-index:2}.brand{font-size:40px;line-height:.96;font-weight:780;letter-spacing:-.065em;cursor:default}.brand .r{color:var(--red);text-shadow:0 0 22px rgba(225,25,45,.75)}.tag{margin-top:12px;color:var(--muted);font-size:13px;letter-spacing:.015em}
 .tag b{color:#c9c2ba;font-weight:600}
+/* 여행 스탯 줄: 계기판 숫자처럼 — 고정폭 숫자, 넓은 자간, 낮은 명도 */
+.stats{margin-top:7px;display:flex;gap:9px;justify-content:center;align-items:center;color:#8a837b;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;font-variant-numeric:tabular-nums}
+.stats i{font-style:normal;color:#4e4a45}
 .globeArea{position:relative;z-index:2;width:min(92vw,382px);aspect-ratio:1;margin:24px 0 10px;display:grid;place-items:center}
 #globeBtn{position:absolute;inset:0;border:0;padding:0;background:transparent;border-radius:50%;cursor:pointer;touch-action:manipulation;z-index:6}#globeBtn:active{transform:scale(.985)}
 canvas{width:100%;height:100%;display:block;border-radius:50%;filter:drop-shadow(0 0 30px rgba(225,25,45,.18)) drop-shadow(0 26px 45px rgba(0,0,0,.7))}
 .orbit{position:absolute;inset:7%;border:1px solid rgba(225,25,45,.23);border-radius:50%;transform:rotateX(62deg) rotateZ(-18deg);box-shadow:0 0 34px rgba(225,25,45,.12);pointer-events:none}
 .wave{position:absolute;inset:0;border-radius:50%;border:2px solid rgba(54,255,139,.55);opacity:0;pointer-events:none;z-index:3}.traveling .wave{animation:ripple 1.18s ease-out infinite}.traveling .wave.w2{animation-delay:.38s}.traveling .wave.w3{animation-delay:.76s}
 @keyframes ripple{0%{transform:scale(.985);opacity:.62;border-color:rgba(54,255,139,.72)}66%{opacity:.16}100%{transform:scale(1.18);opacity:0;border-color:rgba(54,255,139,0)}}.traveling canvas{filter:drop-shadow(0 0 50px rgba(54,255,139,.32)) drop-shadow(0 26px 45px rgba(0,0,0,.7))}
-.plane{position:absolute;left:50%;top:50%;width:26px;height:26px;margin:-13px 0 0 -13px;display:grid;place-items:center;color:rgba(255,246,235,.94);font-size:22px;line-height:1;text-shadow:0 0 12px rgba(255,255,255,.34),0 0 22px rgba(225,25,45,.24);opacity:0;transform-origin:50% 50%;pointer-events:none;z-index:5}
-.traveling .plane{opacity:1;animation:planeTravel 4.8s linear infinite}
-/* 궤도 반지름은 지구본 크기에 맞춰 JS가 --orbitR 변수로 주입.
-   기수 각도 76deg = 시계방향 공전의 접선 방향(진행 방향으로 날아가는 느낌) */
-@keyframes planeTravel{
-  0%{transform:rotate(0deg) translateX(var(--orbitR,168px)) rotate(90deg) scale(.9);opacity:0}
-  6%{opacity:1}
-  44%{opacity:1}
-  50%{transform:rotate(180deg) translateX(var(--orbitR,168px)) rotate(90deg) scale(1);opacity:0}
-  68%{opacity:0}
-  74%{transform:rotate(266deg) translateX(var(--orbitR,168px)) rotate(90deg) scale(.85);opacity:.9}
-  100%{transform:rotate(360deg) translateX(var(--orbitR,168px)) rotate(90deg) scale(.9);opacity:0}
-}
-@media(prefers-reduced-motion:reduce){.traveling .plane,.traveling .wave,.tap .finger{animation:none}}
+.traveling @media(prefers-reduced-motion:reduce){.traveling .wave,.tap .finger{animation:none}}
+.globeArea.started .tap{display:none}
 .tap{position:absolute;left:50%;bottom:7.5%;transform:translateX(-50%);display:flex;align-items:center;justify-content:center;gap:5px;padding:5px 9px;border-radius:999px;background:rgba(255,255,255,.075);border:1px solid rgba(255,255,255,.16);box-shadow:0 10px 28px rgba(0,0,0,.24),inset 0 1px 0 rgba(255,255,255,.08);color:#fff2e8;pointer-events:none;backdrop-filter:blur(10px);z-index:7}
 .tap .finger{font-size:16px;line-height:1;filter:drop-shadow(0 0 8px rgba(255,255,255,.22));animation:fingerTap 1.8s ease-in-out infinite}
 .tap .tapText{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,242,232,.86);font-weight:680}
 @keyframes fingerTap{0%,100%{transform:translateY(0) scale(1);opacity:.86}42%{transform:translateY(-2px) scale(1.05);opacity:1}58%{transform:translateY(1px) scale(.96);opacity:.92}}
 .info{z-index:3;width:min(360px,100%);margin-top:auto;padding:8px 16px 0;text-align:center;position:relative;display:flex;flex-direction:column;align-items:center}.country{color:var(--green);font-size:13px;letter-spacing:.18em;text-transform:uppercase;text-shadow:0 0 18px rgba(54,255,139,.45);min-height:18px;text-align:center;margin:0 auto 4px;font-weight:650}.station{margin:0 auto;font-size:14px;font-weight:520;letter-spacing:-.005em;line-height:1.18;min-height:36px;text-align:center;display:flex;align-items:flex-start;justify-content:center;max-width:280px;text-wrap:balance;color:#fff7ee}
 .genre{margin:2px auto 0;color:var(--muted);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;min-height:13px}
-.statusWave{display:none;height:20px;align-items:center;gap:3px;margin-top:-4px;margin-bottom:10px}.travelingState .statusWave{display:flex}.statusWave i{display:block;width:3px;height:8px;border-radius:99px;background:var(--green);box-shadow:0 0 12px rgba(54,255,139,.85);animation:bar 760ms ease-in-out infinite}.statusWave i:nth-child(2){animation-delay:80ms}.statusWave i:nth-child(3){animation-delay:160ms}.statusWave i:nth-child(4){animation-delay:240ms}.statusWave i:nth-child(5){animation-delay:320ms}.statusWave i:nth-child(6){animation-delay:400ms}.statusWave i:nth-child(7){animation-delay:480ms}@keyframes bar{0%,100%{height:6px;opacity:.55}50%{height:20px;opacity:1}}
+/* 주파수 신호계: 중앙이 높고 가장자리로 잦아드는 대칭 엔벨로프,
+   양끝은 안개처럼 사라진다(마스크). transform 기반이라 부드럽고 저전력 */
+.statusWave{display:none;height:22px;align-items:center;justify-content:center;gap:3.5px;margin-top:-3px;margin-bottom:10px;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 20%,#000 80%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 20%,#000 80%,transparent)}
+.travelingState .statusWave{display:flex}
+.statusWave i{display:block;width:2px;height:calc(22px*var(--h,1));border-radius:99px;
+  background:linear-gradient(180deg,#8affc2,rgba(54,255,139,.22));
+  box-shadow:0 0 7px rgba(54,255,139,.45);
+  transform:scaleY(.3);transform-origin:center;
+  animation:bar 940ms cubic-bezier(.45,0,.55,1) infinite;animation-delay:var(--d,0ms)}
+@keyframes bar{0%,100%{transform:scaleY(.26);opacity:.5}50%{transform:scaleY(1);opacity:1}}
 .favRow{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:10px}.fav{width:40px;height:40px;display:grid;place-items:center;border-radius:50%;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05);color:var(--text);font-size:18px;cursor:pointer;backdrop-filter:blur(12px);flex:none}.fav.on{color:var(--red);border-color:rgba(225,25,45,.42);background:rgba(225,25,45,.11);box-shadow:0 0 20px rgba(225,25,45,.18)}
 .fav.sleepOn{color:var(--green);border-color:rgba(54,255,139,.4);background:rgba(54,255,139,.08);box-shadow:0 0 20px rgba(54,255,139,.16)}
-.sleepInfo{min-height:13px;margin-top:6px;color:var(--muted);font-size:10px;letter-spacing:.13em;text-transform:uppercase}
+.sleepInfo{min-height:13px;margin-top:6px;color:var(--red);font-size:10px;letter-spacing:.13em;text-transform:uppercase;font-variant-numeric:tabular-nums;text-shadow:0 0 10px rgba(225,25,45,.4)}
 .drawer{position:absolute;left:18px;right:18px;bottom:18px;z-index:10;border-radius:26px;background:rgba(9,9,9,.82);border:1px solid rgba(255,255,255,.1);box-shadow:0 -18px 70px rgba(0,0,0,.58),inset 0 1px 0 rgba(255,255,255,.06);backdrop-filter:blur(20px);transform:translateY(calc(100% + 24px));transition:transform .32s ease;max-height:44%;display:flex;flex-direction:column;overflow:hidden}.drawer.open{transform:translateY(0)}
-.drawerHead{display:flex;align-items:center;justify-content:flex-end;padding:7px 8px 2px}.close{width:24px;height:24px;border-radius:50%;border:1px solid rgba(225,25,45,.46);background:rgba(225,25,45,.18);color:#ff6b72;font-size:15px;line-height:1;cursor:pointer;padding:0;display:grid;place-items:center;box-shadow:0 0 16px rgba(225,25,45,.18)}.favList{overflow:auto;padding:0 7px 8px}.empty{padding:18px 10px 24px;color:#817a73;font-size:11px;text-align:center}
+.drawerHead{position:relative;display:flex;align-items:center;justify-content:flex-end;padding:10px 8px 2px;touch-action:none}
+.grip{position:absolute;left:50%;top:7px;transform:translateX(-50%);width:36px;height:4px;border-radius:99px;background:rgba(255,255,255,.22)}.close{width:24px;height:24px;border-radius:50%;border:1px solid rgba(225,25,45,.46);background:rgba(225,25,45,.18);color:#ff6b72;font-size:15px;line-height:1;cursor:pointer;padding:0;display:grid;place-items:center;box-shadow:0 0 16px rgba(225,25,45,.18)}.favList{overflow:auto;padding:0 7px 8px}.empty{padding:18px 10px 24px;color:#817a73;font-size:11px;text-align:center}
 .favItem{width:100%;display:grid;grid-template-columns:1fr auto;gap:6px;align-items:center;padding:7px 6px;border:0;border-top:1px solid rgba(255,255,255,.055);background:transparent;color:var(--text);text-align:left;cursor:pointer}
 .favItem .meta{display:block;font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--green);opacity:.86}.favItem .name{display:block;font-size:11.5px;line-height:1.12;margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .remove{width:19px;height:19px;border-radius:50%;border:1px solid rgba(255,255,255,.07);background:rgba(255,255,255,.03);color:#7e7770;cursor:pointer;font-size:11px}
-.notice{margin-top:8px;color:#706a64;font-size:9.5px;line-height:1.25;max-width:300px;text-align:center}
+.notice{margin-top:8px;color:#5d5852;font-size:9.5px;line-height:1.25;max-width:300px;text-align:center}
 /* 숨은 디버그 패널: 로고 5회 탭으로 열림 */
 .debug{position:absolute;inset:14px;z-index:20;display:none;flex-direction:column;background:rgba(5,5,5,.95);border:1px solid rgba(54,255,139,.28);border-radius:24px;padding:12px 14px;backdrop-filter:blur(14px)}
 .debug.open{display:flex}
@@ -75,6 +78,16 @@ canvas{width:100%;height:100%;display:block;border-radius:50%;filter:drop-shadow
   .drawer{left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom))}
   .debug{inset:calc(10px + env(safe-area-inset-top)) 10px calc(10px + env(safe-area-inset-bottom))}
 }
+/* 도착 모션: 나라·방송국·장르가 한 박자로 떠오른다 */
+.info.arrive .country{animation:fadeUp .4s ease both}
+.info.arrive .clock{animation:fadeUp .4s ease .06s both}
+.info.arrive .station{animation:fadeUp .4s ease .1s both}
+.info.arrive .genre{animation:fadeUp .4s ease .16s both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.info.arrive .country,.info.arrive .clock,.info.arrive .station,.info.arrive .genre{animation:none}}
+/* 버튼 촉감 */
+.fav:active{transform:scale(.9)}
+.fav{transition:transform .12s ease,box-shadow .2s ease}
 /* 현지 시각: 플립시계 스타일 — 숫자 하나당 카드 하나 */
 .clock{display:flex;align-items:center;justify-content:center;gap:3px;min-height:23px;margin:-2px auto 9px}
 .clock:empty{min-height:0;margin:0 auto 5px}
@@ -100,17 +113,52 @@ canvas{width:100%;height:100%;display:block;border-radius:50%;filter:drop-shadow
 .fav .fh{display:none}
 .fav.on .fo{display:none}
 .fav.on .fh{display:block}
-.plane svg{width:24px;height:24px;display:block;filter:drop-shadow(0 0 6px rgba(255,255,255,.3))}
 .tap svg{width:15px;height:15px;display:block}
+
+/* ── 가로 모드(폰을 눕혔을 때): 왼쪽 정보 패널 · 오른쪽 온전한 지구본 ──
+   DOM 변경 없이 grid-area 재배치만 사용. 지구본은 화면 높이에 맞춰
+   절대 잘리지 않는 완전한 원으로 우측에 선다 */
+@media (orientation:landscape) and (max-height:540px){
+  .app{padding:0}
+  .shell{
+    width:100%;max-width:none;min-height:100dvh;
+    border:0;border-radius:0;box-shadow:none;
+    display:grid;
+    grid-template-columns:minmax(0,1fr) auto;
+    grid-template-rows:auto 1fr;
+    grid-template-areas:"hd gl" "in gl";
+    column-gap:10px;align-items:center;
+    padding:calc(10px + env(safe-area-inset-top)) calc(16px + env(safe-area-inset-right)) calc(10px + env(safe-area-inset-bottom)) calc(18px + env(safe-area-inset-left));
+  }
+  header{grid-area:hd;text-align:left;align-self:start;padding-top:4px}
+  .brand{font-size:26px}
+  .tag{margin-top:6px;font-size:11px}
+  .stats{justify-content:flex-start;margin-top:5px}
+  .globeArea{grid-area:gl;width:min(calc(100dvh - 34px),48vw);margin:0;align-self:center;justify-self:end}
+  .info{grid-area:in;margin-top:0;padding:0 6px 0 0;align-self:center;max-width:340px;justify-self:start}
+  .station{min-height:30px}
+  .notice{font-size:8.5px;max-width:280px}
+  /* 시계 모드: 머리맡 플립시계처럼 크게 — 화면 높이에 비례 */
+  .country{font-size:15px;letter-spacing:.26em;margin-bottom:10px}
+  .clock{gap:7px;margin:0 0 16px}
+  .fd{width:min(14vh,62px);height:min(21vh,92px);font-size:min(12vh,54px);border-radius:11px}
+  .fd:after{left:4px;right:4px}
+  .fcol{font-size:min(8vh,34px);margin:0 3px;transform:translateY(-2px)}
+  .fap{height:min(21vh,92px);padding:0 13px;margin-left:10px;font-size:min(3.8vh,16px);border-radius:11px}
+  .station{font-size:15px;min-height:26px}
+  .notice{display:none}
+  .drawer{left:auto;right:calc(14px + env(safe-area-inset-right));bottom:14px;width:min(340px,44vw);max-height:74%}
+  .debug{inset:calc(8px + env(safe-area-inset-top)) calc(8px + env(safe-area-inset-right)) calc(8px + env(safe-area-inset-bottom)) calc(8px + env(safe-area-inset-left))}
+}
 </style>
 </head>
 <body>
 <div class="app"><main class="shell" id="shell">
-<header><div class="brand" id="brand"><span class="r">R</span>andom <span class="r">R</span>adio</div><div class="tag">World trip by radio. · <b id="poolCount">…</b> music channels</div></header>
-<section class="globeArea" id="globeArea"><span class="wave w1"></span><span class="wave w2"></span><span class="wave w3"></span><span class="plane" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><g transform="rotate(90 12 12)"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></g></svg></span><canvas id="globe"></canvas><span class="orbit"></span><button id="globeBtn" aria-label="Play a random radio station from somewhere in the world"></button><span class="tap" aria-hidden="true"><span class="finger"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="2.6" fill="currentColor" stroke="none"/><path d="M5.6 5.6a9 9 0 0 0 0 12.8M18.4 5.6a9 9 0 0 1 0 12.8" opacity=".85"/></svg></span><span class="tapText">tap</span></span></section>
-<section class="info" id="info"><div class="country" id="country">WORLD</div><div class="clock" id="clock" aria-hidden="true"></div><div class="station" id="station" role="button" tabindex="0" aria-label="Pause or resume">Tap the globe.</div><div class="genre" id="genre"></div><div class="statusWave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="favRow"><button id="fav" class="fav" aria-label="Favorite station"><svg class="fo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M12 20.4S4.8 15.7 2.9 11.6A5.3 5.3 0 0 1 12 6.9a5.3 5.3 0 0 1 9.1 4.7C19.2 15.7 12 20.4 12 20.4z"/></svg><svg class="fh" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 20.4S4.8 15.7 2.9 11.6A5.3 5.3 0 0 1 12 6.9a5.3 5.3 0 0 1 9.1 4.7C19.2 15.7 12 20.4 12 20.4z"/></svg></button><button id="sleep" class="fav" aria-label="Sleep timer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button></div><div class="sleepInfo" id="sleepInfo"></div><div class="notice">Public internet radio streams. Rights belong to each broadcaster and rights holder.</div></section>
-<section class="drawer" id="drawer"><div class="drawerHead"><button class="close" id="closeDrawer" aria-label="Close favorites">×</button></div><div class="favList" id="favList"></div></section>
-<section class="debug" id="debug" aria-hidden="true"><div class="debugHead"><span>DEBUG · RANDOM RADIO v70</span><button class="close" id="closeDebug" aria-label="Close debug">×</button></div><pre id="debugBody"></pre></section>
+<header><div class="brand" id="brand"><span class="r">R</span>andom <span class="r">R</span>adio</div><div class="tag">World trip radio. · <b id="poolCount">…</b> music channels</div><div class="stats"><span id="countryCount">0 countries</span><i>·</i><span id="tripKm">0 km</span></div></header>
+<section class="globeArea" id="globeArea"><span class="wave w1"></span><span class="wave w2"></span><span class="wave w3"></span><canvas id="globe"></canvas><span class="orbit"></span><button id="globeBtn" aria-label="Play a random radio station from somewhere in the world"></button><span class="tap" aria-hidden="true"><span class="finger"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="2.6" fill="currentColor" stroke="none"/><path d="M5.6 5.6a9 9 0 0 0 0 12.8M18.4 5.6a9 9 0 0 1 0 12.8" opacity=".85"/></svg></span><span class="tapText">tap</span></span></section>
+<section class="info" id="info"><div class="country" id="country">WORLD</div><div class="clock" id="clock" aria-hidden="true"></div><div class="station" id="station" role="button" tabindex="0" aria-label="Pause or resume">Tap the globe.</div><div class="genre" id="genre"></div><div class="statusWave" aria-hidden="true"><i style="--h:.3;--d:0ms"></i><i style="--h:.45;--d:60ms"></i><i style="--h:.6;--d:120ms"></i><i style="--h:.74;--d:180ms"></i><i style="--h:.86;--d:240ms"></i><i style="--h:.95;--d:300ms"></i><i style="--h:1;--d:360ms"></i><i style="--h:.95;--d:420ms"></i><i style="--h:.86;--d:480ms"></i><i style="--h:.74;--d:540ms"></i><i style="--h:.6;--d:600ms"></i><i style="--h:.45;--d:660ms"></i><i style="--h:.3;--d:720ms"></i></div><div class="favRow"><button id="fav" class="fav" aria-label="Favorite station"><svg class="fo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M12 20.4S4.8 15.7 2.9 11.6A5.3 5.3 0 0 1 12 6.9a5.3 5.3 0 0 1 9.1 4.7C19.2 15.7 12 20.4 12 20.4z"/></svg><svg class="fh" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 20.4S4.8 15.7 2.9 11.6A5.3 5.3 0 0 1 12 6.9a5.3 5.3 0 0 1 9.1 4.7C19.2 15.7 12 20.4 12 20.4z"/></svg></button><button id="sleep" class="fav" aria-label="Sleep timer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button></div><div class="sleepInfo" id="sleepInfo"></div><div class="notice">Public internet radio streams. Rights belong to each broadcaster and rights holder.</div></section>
+<section class="drawer" id="drawer"><div class="drawerHead"><span class="grip" aria-hidden="true"></span><button class="close" id="closeDrawer" aria-label="Close favorites">×</button></div><div class="favList" id="favList"></div></section>
+<section class="debug" id="debug" aria-hidden="true"><div class="debugHead"><span>DEBUG · RANDOM RADIO v78</span><button class="close" id="closeDebug" aria-label="Close debug">×</button></div><pre id="debugBody"></pre></section>
 </main></div>
 <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
@@ -118,7 +166,7 @@ canvas{width:100%;height:100%;display:block;border-radius:50%;filter:drop-shadow
 (()=>{'use strict';
 
 /* ═══════════════════════════════════════════════════════════════
-   Random Radio v70 — 심야의 세계 라디오 여행
+   Random Radio v78 — 심야의 세계 라디오 여행
    구조: 0.설정 → 1.상태 → 2.유틸 → 3.좌표 → 4.API/채널풀
         → 5.오디오 엔진 → 6.슬립 타이머 → 7.즐겨찾기/마지막 상태
         → 8.지구본 렌더링 → 9.부팅
@@ -166,7 +214,7 @@ const REGION=(()=>{try{return new Intl.DisplayNames(['en'],{type:'region'})}catc
 /* 음악 외 콘텐츠 차단 필터 — 태그와 방송국 이름 양쪽에 적용 */
 const BAD=/news|talk|speech|sport|relig|scanner|weather|police|podcast|traffic|sermon|quran|preach/i;
 const IS_IOS=/iPad|iPhone|iPod/.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
-const POOL_TARGET=2000,POOL_MAX=4000;
+const POOL_TARGET=2000,POOL_MAX=5000;
 const CACHE_KEY='rr_pool_v62',CACHE_TTL=24*60*60*1000;  /* 채널 풀 캐시(24시간, 백그라운드 갱신 병행) */
 const BAD_KEY='rr_bad_v62';                             /* 죽은 스트림 블랙리스트(세션 간 유지) */
 const FAV_KEY='rr_favs_v50';                            /* 즐겨찾기 */
@@ -271,7 +319,7 @@ function looks(st){
 
 /* ─────────────────── 4. Radio Browser API / 채널 풀 ─────────────────── */
 
-function updatePoolUI(){$('poolCount').textContent=pool.size.toLocaleString('en-US')}
+function updatePoolUI(){$('poolCount').textContent=pool.size.toLocaleString('en-US')+(pool.size>=POOL_MAX?'+':'')}
 function addToPool(arr){
   let added=0;
   for(const st of arr){
@@ -379,7 +427,7 @@ function searchQuery(extra){
   return'/json/stations/search?'+q;
 }
 function savePoolCache(){
-  try{localStorage.setItem(CACHE_KEY,JSON.stringify({t:Date.now(),s:[...pool.values()].slice(0,3500)}))}catch{}
+  try{localStorage.setItem(CACHE_KEY,JSON.stringify({t:Date.now(),s:[...pool.values()].slice(0,4500)}))}catch{}
 }
 /* 죽은 스트림 블랙리스트 영속화: 오늘 죽어 있던 채널을 내일 또
    시도하지 않는다. 만료 12시간, 최대 400건으로 용량 관리 */
@@ -468,6 +516,34 @@ function reportClick(st){
    첫 탭에서 무음 WAV로 요소를 '잠금 해제'해 두면 이후 await를
    건너뛰며 후보를 갈아타도 재생이 차단되지 않는다. */
 
+/* ── 튜닝 노이즈 ──
+   다이얼을 돌리는 순간의 지직거림. Web Audio 로컬 생성이라 CORS 무관.
+   ※ 제거하려면 playNext 안의 playStatic() 한 줄만 지우면 된다 */
+let actx=null;
+function ensureAudioCtx(){
+  try{
+    if(!actx){const AC=window.AudioContext||window.webkitAudioContext;if(AC)actx=new AC()}
+    if(actx&&actx.state==='suspended')actx.resume().catch(()=>{});
+  }catch{}
+}
+function playStatic(){
+  try{
+    if(!actx||actx.state!=='running')return;
+    const dur=.42,sr=actx.sampleRate;
+    const buf=actx.createBuffer(1,Math.floor(sr*dur),sr),ch=buf.getChannelData(0);
+    for(let i=0;i<ch.length;i++)ch[i]=(Math.random()*2-1)*.6;
+    const src=actx.createBufferSource();src.buffer=buf;
+    const bp=actx.createBiquadFilter();bp.type='bandpass';bp.Q.value=.8;
+    bp.frequency.setValueAtTime(700,actx.currentTime);
+    bp.frequency.exponentialRampToValueAtTime(2600,actx.currentTime+dur);
+    const g=actx.createGain();
+    g.gain.setValueAtTime(0,actx.currentTime);
+    g.gain.linearRampToValueAtTime(.09,actx.currentTime+.05);
+    g.gain.linearRampToValueAtTime(0,actx.currentTime+dur);
+    src.connect(bp);bp.connect(g);g.connect(actx.destination);
+    src.start();src.stop(actx.currentTime+dur+.02);
+  }catch{}
+}
 const SILENT_WAV='data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAQB8AAIA+AAACABAAZGF0YQAAAAA=';
 let player=null,unlocked=false,playToken=0;
 function getPlayer(){
@@ -608,7 +684,12 @@ function candidates(){
   const fresh=raw.filter(st=>!recentCountries.includes(ccOf(st)));
   if(fresh.length>=8)raw=fresh;
   if(!raw.length)raw=base;                       /* 완화 ①: played 해제 */
-  raw=shuffle(raw).slice(0,12);
+  raw=shuffle(raw);
+  /* 다양성: 후보 앞줄은 국가가 겹치지 않게 뽑는다(한 국가 1곳),
+     그 뒤에 나머지를 채워 같은 나라 연속 방문 체감을 줄인다 */
+  const seenCC=new Set(),uniq=[],rest=[];
+  for(const st of raw){const c=ccOf(st);if(!seenCC.has(c)){seenCC.add(c);uniq.push(st)}else rest.push(st)}
+  raw=[...uniq,...rest].slice(0,12);
   /* 네이티브 HLS가 없는 환경(Chrome류)에서는 CORS 실패 가능성이 있는
      HLS 채널을 뒤로 미뤄 헛탭을 줄인다 */
   if(!nativeHls())raw.sort((a,b)=>(isHls(a)?1:0)-(isHls(b)?1:0));
@@ -627,7 +708,7 @@ function setBusy(on){
     $('info').classList.remove('paused');
     $('clock').textContent='';
     $('country').textContent='TRAVELLING';
-    $('station').textContent='finding a station…';
+    $('station').textContent='';
     $('genre').textContent='';
   }
 }
@@ -642,13 +723,41 @@ function localTimeStr(lon){
   const ap=h>=12?'PM':'AM';h=h%12||12;
   return h+':'+String(m).padStart(2,'0')+' '+ap;
 }
+/* 국가 → IANA 표준 시간대(수도 기준). Intl.DateTimeFormat이 서머타임까지
+   자동 반영한다. 다시간대 대국(US/CA/RU/BR/AU/ID)은 경도 구간으로 분할 */
+const TZ={AD:'Europe/Andorra',AE:'Asia/Dubai',AF:'Asia/Kabul',AG:'America/Antigua',AL:'Europe/Tirane',AM:'Asia/Yerevan',AO:'Africa/Luanda',AR:'America/Argentina/Buenos_Aires',AT:'Europe/Vienna',AZ:'Asia/Baku',BA:'Europe/Sarajevo',BB:'America/Barbados',BD:'Asia/Dhaka',BE:'Europe/Brussels',BF:'Africa/Ouagadougou',BG:'Europe/Sofia',BH:'Asia/Bahrain',BI:'Africa/Bujumbura',BJ:'Africa/Porto-Novo',BN:'Asia/Brunei',BO:'America/La_Paz',BS:'America/Nassau',BT:'Asia/Thimphu',BW:'Africa/Gaborone',BY:'Europe/Minsk',BZ:'America/Belize',CD:'Africa/Kinshasa',CF:'Africa/Bangui',CG:'Africa/Brazzaville',CH:'Europe/Zurich',CI:'Africa/Abidjan',CL:'America/Santiago',CM:'Africa/Douala',CN:'Asia/Shanghai',CO:'America/Bogota',CR:'America/Costa_Rica',CU:'America/Havana',CV:'Atlantic/Cape_Verde',CY:'Asia/Nicosia',CZ:'Europe/Prague',DE:'Europe/Berlin',DJ:'Africa/Djibouti',DK:'Europe/Copenhagen',DO:'America/Santo_Domingo',DZ:'Africa/Algiers',EC:'America/Guayaquil',EE:'Europe/Tallinn',EG:'Africa/Cairo',ER:'Africa/Asmara',ES:'Europe/Madrid',ET:'Africa/Addis_Ababa',FI:'Europe/Helsinki',FJ:'Pacific/Fiji',FR:'Europe/Paris',GA:'Africa/Libreville',GB:'Europe/London',GE:'Asia/Tbilisi',GH:'Africa/Accra',GM:'Africa/Banjul',GN:'Africa/Conakry',GR:'Europe/Athens',GT:'America/Guatemala',GY:'America/Guyana',HK:'Asia/Hong_Kong',HN:'America/Tegucigalpa',HR:'Europe/Zagreb',HT:'America/Port-au-Prince',HU:'Europe/Budapest',IE:'Europe/Dublin',IL:'Asia/Jerusalem',IN:'Asia/Kolkata',IQ:'Asia/Baghdad',IR:'Asia/Tehran',IS:'Atlantic/Reykjavik',IT:'Europe/Rome',JM:'America/Jamaica',JO:'Asia/Amman',JP:'Asia/Tokyo',KE:'Africa/Nairobi',KG:'Asia/Bishkek',KH:'Asia/Phnom_Penh',KP:'Asia/Pyongyang',KR:'Asia/Seoul',KW:'Asia/Kuwait',KZ:'Asia/Almaty',LA:'Asia/Vientiane',LB:'Asia/Beirut',LI:'Europe/Vaduz',LK:'Asia/Colombo',LR:'Africa/Monrovia',LS:'Africa/Maseru',LT:'Europe/Vilnius',LU:'Europe/Luxembourg',LV:'Europe/Riga',LY:'Africa/Tripoli',MA:'Africa/Casablanca',MC:'Europe/Monaco',MD:'Europe/Chisinau',ME:'Europe/Podgorica',MG:'Indian/Antananarivo',MK:'Europe/Skopje',ML:'Africa/Bamako',MM:'Asia/Yangon',MN:'Asia/Ulaanbaatar',MO:'Asia/Macau',MT:'Europe/Malta',MU:'Indian/Mauritius',MV:'Indian/Maldives',MW:'Africa/Blantyre',MX:'America/Mexico_City',MY:'Asia/Kuala_Lumpur',MZ:'Africa/Maputo',NA:'Africa/Windhoek',NE:'Africa/Niamey',NG:'Africa/Lagos',NI:'America/Managua',NL:'Europe/Amsterdam',NO:'Europe/Oslo',NP:'Asia/Kathmandu',NZ:'Pacific/Auckland',OM:'Asia/Muscat',PA:'America/Panama',PE:'America/Lima',PG:'Pacific/Port_Moresby',PH:'Asia/Manila',PK:'Asia/Karachi',PL:'Europe/Warsaw',PR:'America/Puerto_Rico',PT:'Europe/Lisbon',PY:'America/Asuncion',QA:'Asia/Qatar',RO:'Europe/Bucharest',RS:'Europe/Belgrade',RW:'Africa/Kigali',SA:'Asia/Riyadh',SD:'Africa/Khartoum',SE:'Europe/Stockholm',SG:'Asia/Singapore',SI:'Europe/Ljubljana',SK:'Europe/Bratislava',SL:'Africa/Freetown',SN:'Africa/Dakar',SO:'Africa/Mogadishu',SR:'America/Paramaribo',SV:'America/El_Salvador',SY:'Asia/Damascus',TD:'Africa/Ndjamena',TG:'Africa/Lome',TH:'Asia/Bangkok',TJ:'Asia/Dushanbe',TM:'Asia/Ashgabat',TN:'Africa/Tunis',TR:'Europe/Istanbul',TT:'America/Port_of_Spain',TW:'Asia/Taipei',TZ:'Africa/Dar_es_Salaam',UA:'Europe/Kyiv',UG:'Africa/Kampala',UY:'America/Montevideo',UZ:'Asia/Tashkent',VE:'America/Caracas',VN:'Asia/Ho_Chi_Minh',YE:'Asia/Aden',ZA:'Africa/Johannesburg',ZM:'Africa/Lusaka',ZW:'Africa/Harare'};
+function zoneFor(st){
+  const cc=ccOf(st);
+  const p=displayPoint(st),lon=p?p[1]:null;
+  if(lon!=null){ /* 다시간대 대국: 경도 구간 → 대표 시간대 */
+    if(cc==='US')return lon<-130?'Pacific/Honolulu':lon<-115?'America/Los_Angeles':lon<-102?'America/Denver':lon<-87?'America/Chicago':'America/New_York';
+    if(cc==='CA')return lon<-114?'America/Vancouver':lon<-90?'America/Winnipeg':'America/Toronto';
+    if(cc==='RU')return lon<52?'Europe/Moscow':lon<75?'Asia/Yekaterinburg':lon<105?'Asia/Krasnoyarsk':lon<130?'Asia/Yakutsk':'Asia/Vladivostok';
+    if(cc==='BR')return lon<-55?'America/Manaus':'America/Sao_Paulo';
+    if(cc==='AU')return lon<129?'Australia/Perth':lon<141?'Australia/Adelaide':'Australia/Sydney';
+    if(cc==='ID')return lon<115?'Asia/Jakarta':lon<135?'Asia/Makassar':'Asia/Jayapura';
+  }
+  return TZ[cc]||null;
+}
 function renderClock(){
   const el=$('clock');
   el.textContent='';
-  if(!current||currentLon==null)return;
-  const off=Math.round(currentLon/15);
-  const d=new Date(Date.now()+off*3600e3);
-  let h=d.getUTCHours();const m=d.getUTCMinutes();
+  let h,m;
+  const z=current?zoneFor(current):null;
+  if(!current){ /* 아직 여행 전: 내 현지 시각(침대맡 시계 모드) */
+    const d=new Date();h=d.getHours();m=d.getMinutes();
+  }else if(z){ /* IANA 시간대 + Intl → 서머타임 자동 반영 (국제표준) */
+    try{
+      const parts=new Intl.DateTimeFormat('en-US',{timeZone:z,hour:'numeric',minute:'2-digit',hour12:false}).formatToParts(new Date());
+      h=Number(parts.find(x=>x.type==='hour').value)%24;
+      m=Number(parts.find(x=>x.type==='minute').value);
+    }catch{h=null}
+  }
+  if(current&&h==null){ /* 시간대 미등록 소지역: 경도 태양시 근사 폴백 */
+    if(currentLon==null)return;
+    const d=new Date(Date.now()+Math.round(currentLon/15)*3600e3);
+    h=d.getUTCHours();m=d.getUTCMinutes();
+  }
   const ap=h>=12?'PM':'AM';h=h%12||12;
   const digits=String(h).padStart(2,'0')+':'+String(m).padStart(2,'0');
   for(const ch of digits){
@@ -663,18 +772,26 @@ function renderClock(){
 }
 /* 30초마다 현지 시각 갱신(재생 중·화면 표시 중에만) */
 setInterval(()=>{
-  if(current&&currentLon!=null&&!document.hidden)renderClock();
+  if(!document.hidden&&!$('globeArea').classList.contains('traveling'))renderClock();
 },10000);
 function setMSState(s){try{if('mediaSession'in navigator)navigator.mediaSession.playbackState=s}catch{}}
 function setNowPlaying(st){
-  $('info').classList.remove('paused');
+  const info=$('info');
+  info.classList.remove('paused');
+  info.classList.remove('arrive');
+  try{void info.offsetWidth}catch{}          /* 애니메이션 재점화용 리플로우 */
+  info.classList.add('arrive');
   const p=displayPoint(st);
   currentLon=p?p[1]:null;
   $('country').textContent=countryName(st);
   renderClock();
   $('station').textContent=clean(st.name);
   $('genre').textContent=genreOf(st);
-  if(p)targetRotation=[-p[1],-p[0],0];     /* 지구본을 그 나라로 회전 */
+  /* 대권항로 비행: 이전 방송국이 있으면 실제 항로로 날아간다 */
+  if(p){
+    if(!(lastPoint&&startFlight(lastPoint,p)))targetRotation=[-p[1],-p[0],0];
+    lastPoint=p;
+  }
   setMSState('playing');
   /* 잠금화면·제어센터 연동(Media Session) */
   if('mediaSession'in navigator){
@@ -690,7 +807,10 @@ function setNowPlaying(st){
 }
 /* 랜덤 여행 본체: 후보를 순서대로 시도, 전부 실패 시 자동 2회 재시도 */
 async function playNext(){
-  if(switching)return;switching=true;started=true;userPaused=false;setBusy(true);
+  if(switching)return;switching=true;started=true;userPaused=false;
+  $('globeArea').classList.add('started');   /* tap 힌트는 첫 여행부터 숨김 */
+  playStatic();                               /* 다이얼 지직음(튜닝 노이즈) */
+  setBusy(true);
   stopWatchdog();
   let cand=candidates();
   /* 마지막 청취 방송국 복원: 첫 탭 한정으로 최우선 후보에 배치 */
@@ -706,7 +826,10 @@ async function playNext(){
     played.add(key(ok));
     if(played.size>600)played=new Set([...played].slice(-300));
     const cc=ccOf(ok);
-    if(cc)recentCountries=[cc,...recentCountries.filter(x=>x!==cc)].slice(0,10);
+    if(cc){
+      recentCountries=[cc,...recentCountries.filter(x=>x!==cc)].slice(0,15);
+      if(!visited.has(cc)){visited.add(cc);saveCountries();updateStatsUI()}
+    }
     const p=displayPoint(ok);
     if(p&&dots.length<250)dots.push({lat:p[0],lon:p[1]});
     setNowPlaying(ok);
@@ -720,7 +843,7 @@ async function playNext(){
     /* 사용자를 귀찮게 하기 전에 조용히 한 번 더 여행 */
     autoRetries++;
     $('country').textContent='TRAVELLING';
-    $('station').textContent='searching another playable station…';
+    $('station').textContent='';
     $('genre').textContent='';
     switching=false;
     setTimeout(playNext,700);
@@ -728,7 +851,7 @@ async function playNext(){
     autoRetries=0;
     hardStop();
     $('country').textContent='NO SIGNAL';
-    $('station').textContent='Tap the globe to retry.';
+    $('station').textContent='';
     $('genre').textContent='';
     setBusy(false);switching=false;
   }
@@ -972,7 +1095,85 @@ $('station').onclick=()=>{
 };
 $('station').onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();$('station').onclick()}};
 $('closeDrawer').onclick=()=>{drawer=false;renderFavs()};
-$('globeBtn').onclick=()=>{unlock();autoRetries=0;playNext()};
+/* 서랍을 아래로 스와이프해 닫기. 목록이 맨 위일 때만 드래그를 시작해
+   목록 스크롤과 충돌하지 않는다 */
+(()=>{
+  const dr=$('drawer');
+  let y0=null,dy=0,drag=false;
+  dr.addEventListener('touchstart',e=>{
+    if(!drawer)return;
+    if(($('favList').scrollTop||0)>0)return;
+    y0=e.touches[0].clientY;dy=0;drag=true;
+    dr.style.transition='none';
+  },{passive:true});
+  dr.addEventListener('touchmove',e=>{
+    if(!drag)return;
+    dy=Math.max(0,e.touches[0].clientY-y0);
+    dr.style.transform='translateY('+dy+'px)';
+  },{passive:true});
+  dr.addEventListener('touchend',()=>{
+    if(!drag)return;drag=false;
+    dr.style.transition='';dr.style.transform='';
+    if(dy>80){drawer=false;renderFavs()}
+  });
+})();
+$('globeBtn').onclick=()=>{unlock();ensureAudioCtx();autoRetries=0;playNext()};
+
+/* ── 밤의 반구 ──
+   태양 적위·시각으로 지금 밤인 반구를 계산해 지구본에 그린다.
+   시계가 "리스본은 새벽 4시"라고 말하면 지구본이 눈으로 보여준다.
+   외부 의존성 없음(수식 몇 줄), 1분에 한 번만 재계산 */
+let nightGeo=null,nightStamp=0;
+function updateNight(){
+  if(!window.d3)return;
+  const now=new Date(),stamp=Math.floor(now.getTime()/60000);
+  if(stamp===nightStamp&&nightGeo)return;
+  nightStamp=stamp;
+  const start=Date.UTC(now.getUTCFullYear(),0,0);
+  const doy=(now.getTime()-start)/86400000;
+  const decl=-23.44*Math.cos(2*Math.PI/365*(doy+10));            /* 태양 적위 */
+  const utcH=now.getUTCHours()+now.getUTCMinutes()/60;
+  const sunLon=((12-utcH)*15+540)%360-180;                        /* 태양 직하점 경도 */
+  const anti=[((sunLon+180+540)%360)-180,-decl];                  /* 반태양점 */
+  try{nightGeo=window.d3.geoCircle().center(anti).radius(90).precision(4)()}catch{nightGeo=null}
+}
+/* ── 대권항로 비행 ──
+   이전 방송국 → 새 방송국을 지구 표면 최단 항로(great circle)로
+   실제 비행한다. 소리는 도착을 기다리지 않고 즉시 시작(라디오 우선),
+   비행은 시각 연출. 누적 비행거리는 localStorage에 쌓인다. */
+/* 방문국 기록: 실제 재생에 성공한 나라만 센다 */
+const COUNTRIES_KEY='rr_countries_v73';let visited=new Set();
+function loadCountries(){try{visited=new Set(JSON.parse(localStorage.getItem(COUNTRIES_KEY)||'[]'))}catch{visited=new Set()}}
+function saveCountries(){try{localStorage.setItem(COUNTRIES_KEY,JSON.stringify([...visited]))}catch{}}
+function updateStatsUI(){try{$('countryCount').textContent=visited.size+(visited.size===1?' country':' countries')}catch{}}
+let flight=null,lastPoint=null,tripKm=0;
+const TRIP_KEY='rr_trip_v71';
+function loadTrip(){try{tripKm=Number(localStorage.getItem(TRIP_KEY))||0}catch{tripKm=0}}
+function saveTrip(){try{localStorage.setItem(TRIP_KEY,String(Math.round(tripKm)))}catch{}}
+function updateTripUI(){try{$('tripKm').textContent=Math.round(tripKm).toLocaleString('en-US')+' km'}catch{}}
+function startFlight(from,to){
+  if(!window.d3||!from||!to)return false;
+  const distKm=gcDeg(from,to)*111.2;
+  if(distKm<300)return false;                    /* 근거리는 비행 생략 */
+  const interp=window.d3.geoInterpolate([from[1],from[0]],[to[1],to[0]]);
+  flight={interp,start:performance.now(),dur:Math.min(3600,1400+distKm*0.10),to};
+  tripKm+=distKm;saveTrip();updateTripUI();
+  return true;
+}
+/* 매 프레임: 비행 중이면 지구본이 비행기를 따라 회전 */
+function flightStep(ts){
+  if(!flight)return false;
+  const t=Math.min(1,(ts-flight.start)/flight.dur);
+  const e=t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;   /* 느긋한 이륙·착륙(cubic) */
+  const[lo,la]=flight.interp(e);
+  rotation[0]+=shortDelta(rotation[0],-lo)*.35;
+  rotation[1]+=(-la-rotation[1])*.35;
+  if(t>=1){
+    const to=flight.to;flight=null;
+    targetRotation=[-to[1],-to[0],0];
+  }
+  return true;
+}
 
 /* ───────────────────────── 8. 지구본 렌더링 ─────────────────────────
    배터리 배려: ① 30fps 상한 ② 탭이 백그라운드로 가면 렌더링을
@@ -982,7 +1183,6 @@ function resize(){
   const rect=canvas.getBoundingClientRect(),dpr=Math.min(window.devicePixelRatio||1,2);
   width=Math.max(300,Math.floor(rect.width*dpr));height=Math.max(300,Math.floor(rect.height*dpr));
   canvas.width=width;canvas.height=height;
-  try{$('globeArea').style.setProperty('--orbitR',Math.round(rect.width*.44)+'px')}catch{}
   if(window.d3){
     projection=d3.geoOrthographic().translate([width/2,height/2]).scale(Math.min(width,height)*.472).clipAngle(90).precision(.25).rotate(rotation);
     path=d3.geoPath(projection,ctx);graticule=d3.geoGraticule10();
@@ -1003,8 +1203,44 @@ function draw(){
     ctx.beginPath();path({type:'Sphere'});ctx.strokeStyle='rgba(255,255,255,.15)';ctx.lineWidth=Math.max(1,width/520);ctx.stroke();
     ctx.beginPath();path(graticule);ctx.strokeStyle='rgba(255,255,255,.105)';ctx.lineWidth=Math.max(.55,width/900);ctx.stroke();
     if(land){ctx.beginPath();path(land);ctx.fillStyle='#272c30';ctx.fill();ctx.strokeStyle='rgba(255,255,255,.17)';ctx.lineWidth=Math.max(.5,width/980);ctx.stroke()}
+    if(nightGeo){ /* 밤 반구 + 터미네이터(황혼선) */
+      ctx.beginPath();path(nightGeo);
+      ctx.fillStyle='rgba(2,5,11,.44)';ctx.fill();
+      ctx.strokeStyle='rgba(255,196,140,.12)';ctx.lineWidth=Math.max(1,width/460);ctx.stroke();
+    }
     for(const g of dots){const p=project(g.lat,g.lon);if(!p)continue;ctx.beginPath();ctx.arc(p[0],p[1],Math.max(.9,width/440),0,Math.PI*2);ctx.fillStyle='rgba(255,45,62,.42)';ctx.fill()}
-    if(current){
+    if(flight){
+      const t=Math.min(1,(performance.now()-flight.start)/flight.dur);
+      const e=t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
+      /* 지나온 항로 궤적 */
+      ctx.beginPath();let pen=false;
+      for(let i=0;i<=28;i++){
+        const q=e*i/28,[lo,la]=flight.interp(q),pp=project(la,lo);
+        if(!pp){pen=false;continue}
+        if(!pen){ctx.moveTo(pp[0],pp[1]);pen=true}else ctx.lineTo(pp[0],pp[1]);
+      }
+      ctx.strokeStyle='rgba(90,255,170,.55)';ctx.lineWidth=Math.max(1,width/520);
+      ctx.setLineDash([Math.max(2,width/260),Math.max(3,width/210)]);ctx.stroke();ctx.setLineDash([]);
+      /* 여객기 실루엣: 진행 방향으로 기수(원본은 위를 향하므로 +90°) */
+      const[lo1,la1]=flight.interp(e),pp=project(la1,lo1);
+      const[lo2,la2]=flight.interp(Math.min(1,e+.012)),p2=project(la2,lo2);
+      if(pp){
+        const ang=p2?Math.atan2(p2[1]-pp[1],p2[0]-pp[0]):0,sz=Math.max(15,width/40);
+        ctx.save();ctx.translate(pp[0],pp[1]);ctx.rotate(ang+Math.PI/2);
+        ctx.shadowColor='rgba(255,246,235,.65)';ctx.shadowBlur=Math.max(5,width/110);
+        ctx.fillStyle='#fff6ec';
+        try{
+          if(!draw._jet)draw._jet=new Path2D('M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z');
+          const k=sz/24;
+          ctx.scale(k,k);ctx.translate(-12,-12);
+          ctx.fill(draw._jet);
+        }catch{
+          ctx.beginPath();ctx.moveTo(0,-sz*.5);ctx.lineTo(sz*.4,sz*.45);ctx.lineTo(0,sz*.2);ctx.lineTo(-sz*.4,sz*.45);ctx.closePath();ctx.fill();
+        }
+        ctx.restore();
+      }
+    }
+    if(current&&!flight){
       const pt=displayPoint(current),p=pt&&project(pt[0],pt[1]);
       if(p){
         const pulse=(8+Math.sin(Date.now()/230)*2)*(width/430);
@@ -1025,6 +1261,8 @@ function loop(ts){
   rafId=requestAnimationFrame(loop);
   if(ts-lastFrame<33)return;               /* 30fps 상한 */
   lastFrame=ts;
+  updateNight();
+  if(flightStep(ts)){draw();return}
   if(targetRotation){
     rotation[0]+=shortDelta(rotation[0],targetRotation[0])*.09;
     rotation[1]+=(targetRotation[1]-rotation[1])*.09;
@@ -1048,7 +1286,7 @@ document.addEventListener('visibilitychange',()=>{
 function renderDebug(){
   const a=player;
   const head=[
-    'v70  unlocked='+unlocked+'  pool='+pool.size+'  played='+played.size+'  blacklist='+bad.size,
+    'v78  unlocked='+unlocked+'  pool='+pool.size+'  played='+played.size+'  blacklist='+bad.size,
     'hls: native='+(nativeHls()?'yes':'no')+'  lib='+(hlsLib?'loaded':(window.Hls?'present':'-')),
     'health: '+healthSummary(),
     'mirror='+String(lastClickBase).replace('https://','')+'  sleep='+(sleepEnd?Math.round((sleepEnd-Date.now())/1000)+'s':'off')+'  reconnects='+reconnects,
@@ -1097,10 +1335,13 @@ function ensureLibs(){
 window.addEventListener('resize',resize);
 load();          /* 즐겨찾기 */
 loadProven();    /* 검증된 채널(동적 시드) */
+loadTrip();updateTripUI();  /* 누적 비행거리 */
+loadCountries();updateStatsUI();  /* 방문국 */
+renderClock();                    /* 재생 전에도 내 현지 시각 표시 */
 loadMirrors();   /* 저장된 미러 목록(7일) */
 loadBad();       /* 죽은 스트림 블랙리스트(세션 간 유지) */
 loadLast();      /* 마지막 청취 상태(방송국·볼륨) */
-resize();startLoop();loadWorld().then(resize);
+resize();startLoop();loadWorld().then(()=>{updateNight();resize()});
 ensureLibs();
 addToPool(SEEDS);   /* 시드를 풀에 직접 투입 — API·캐시가 없어도 카운터가 0이 되지 않는다 */
 loadPoolCache(); /* 캐시가 있으면 즉시 시작 */
